@@ -49,7 +49,7 @@ In this smart contract, the apps will register the following information of each
 
 As explained before, the three first items will be used to verify the credential, the fourth item will used to monitor how much is each app being used, and the other items will be used to monitor pseudonymous information as explained in the following Section. 
 
-![Verification of credentials](/docs/images/verification_covid.png)
+![Verification of credentials](/docs/verification_covid.png)
 
 ## 4. Presentation of the pseudonymized data
  
@@ -78,7 +78,7 @@ We are also proposing to generate dashboards indicating, at least:
 *	How many credentials have been generated of each type. 
 *	A classification by frequency of the reasons why people interrupt isolation (from credential #2). 
 
-![Presentation of credentials](/docs/images/presentation_covid.png)
+![Presentation of credentials](/docs/presentation_covid.png)
 
 ## 5. Privacy ensured
 
