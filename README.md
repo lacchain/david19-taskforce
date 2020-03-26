@@ -12,7 +12,7 @@ COVID-19PAct® is a task force where different LACChain partners collaborate to 
 
 We are proposing to have four different forms to notarize: 
 
-* Confinement [ESP version](https://github.com/lacchain/COVID19-taskforce/blob/master/docs/FORM_CONFINAMIENTO.md) ([ENG version])(https://github.com/lacchain/COVID19-taskforce/blob/master/docs/CONFINEMENT_FORM.md) 
+* Confinement [ESP version](https://github.com/lacchain/COVID19-taskforce/blob/master/docs/FORM_CONFINAMIENTO.md) [ENG version](https://github.com/lacchain/COVID19-taskforce/blob/master/docs/CONFINEMENT_FORM.md) 
 * Interruption of confinement [ESP version](https://github.com/lacchain/COVID19-taskforce/blob/master/docs/FORM_INTERRUPCION.md) [ENG version](https://github.com/lacchain/COVID19-taskforce/blob/master/docs/CONFINEMENT_INTERRUPTION_FORM.md) 
 * Symptoms [ESP version](https://github.com/lacchain/COVID19-taskforce/blob/master/docs/FORM_SINTOMAS.md) [ENG version](https://github.com/lacchain/COVID19-taskforce/blob/master/docs/SYMPTOMS_FORM.md) 
 * Infection [ESP version](https://github.com/lacchain/COVID19-taskforce/blob/master/docs/FORM_INFECCION.md) [ENG version](https://github.com/lacchain/COVID19-taskforce/blob/master/docs/INFECTION_FORM.md) 
