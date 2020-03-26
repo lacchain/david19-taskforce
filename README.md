@@ -27,7 +27,7 @@ Additional requirements for the credentials are:
 
 * They have to be signed by the same private key that corresponds to the app/digital wallet that was used to generate them. 
 
-* The hash of the credential, time-stamp, expiration date, public key of the app that generated it, gender of the person, age of the person, location of the person (adding latitude and longitude), and type of information attested (isolation, interruption of isolation and reason, symptoms, or infection) has to be send to a common smart contract deployed on the blockchain and described in Section 3. 
+* The hash of the credential, time-stamp, expiration date, public key of the app that generated it, gender of the person, age of the person, location of the person (adding latitude and longitude), and type of information attested (isolation, interruption of isolation and reason, symptoms, infection, or recovery) has to be send to a common smart contract deployed on the blockchain and described in Section 3. 
 
 * No information other than the indicated in the previous bullet point can be kept by the provider of the app. Therefore, the provider of the app won’t keep a copy of the credentials in its repositories. 
 
@@ -46,7 +46,7 @@ In this smart contract, the apps will register the following information of each
 *	Gender of the person 
 *	Age of the person 
 *	Location of the person 
-*	Type of information attested (isolation, interruption of isolation and reason, symptoms, or infection)  
+*	Type of information attested (isolation, interruption of isolation and reason, symptoms, infection, or recovery)  
 
 As explained before, the three first items will be used to verify the credential, the fourth item will used to monitor how much is each app being used, and the other items will be used to monitor pseudonymous information as explained in the following Section. 
 
@@ -60,14 +60,15 @@ We are proposing the have an external service listening events to get the public
 *	Gender of the person 
 *	Age of the person 
 *	Location of the person 
-*	Type of information attested (isolation, interruption of isolation and reason, symptoms, or infection)  
+*	Type of information attested (isolation, interruption of isolation and reason, symptoms, infection, or recovery)  
 
-This service will be subscribed to events in the smart contract. The idea is to create and display a map that plots points of three different colours in the location where the information has been notified. This colours would be: 
+This service will be subscribed to events in the smart contract. The idea is to create and display a map that plots points of five different colours in the location where the information has been notified. This colours would be: 
 
 *	Green for isolation 
 *	Yellow for interruption of isolation 
 *	Orange for symptoms 
 *	Red for infection 
+* Purple for recovery
 
 When one clicks on the points/region, it should be able to see information of the gender/age of the person (it can be on average or individually, depending of the number of people reporting).
 
@@ -88,7 +89,7 @@ Only the citizens own the credentials and have all the information they provide.
 *	Gender 
 *	Age 
 *	Location 
-*	Type of information attested (isolation, interruption of isolation and reason, symptoms, or infection) 
+*	Type of information attested (isolation, interruption of isolation and reason, symptoms, infection, or recovery) 
  
 ## 6. Authentication of citizens at the application level
 
