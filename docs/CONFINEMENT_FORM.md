@@ -1,22 +1,22 @@
 # CONFINEMENT FORM
 ## PERSONAL DATA
-First Name *
+* First Name *
 
-Mid Name
+* Mid Name
 
-First Last Name *
+* First Last Name *
 
-Second Last Name *
+* Second Last Name *
 
-Document type (Country ID, Passport ID) *
+* Document type (Country ID, Passport ID) *
 
-Document ID *
+* Document ID *
 
-Sex *
+* Sex *
 
-Age *
+* Age *
 
-Number of family members at home
+* Number of family members at home
 
 ## I RESPONSIBLY DECLARE THAT as by (date)
 I start my quarantine process
@@ -24,12 +24,12 @@ I finish my quarantine process
 
 ## CONFINEMENT PREMISES DATA
 
-Region *
+* Region *
 
-Country *
+* Country *
 
-City *
+* City *
 
-Address 
+* Address 
 
-Zip code *
+* Zip code *
