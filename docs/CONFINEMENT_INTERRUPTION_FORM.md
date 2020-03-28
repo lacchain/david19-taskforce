@@ -1,12 +1,14 @@
 # CONFINEMENT INTERRUPTION FORM
 ## PERSONAL DATA
-* First Name
-* Mid Name
-* First Last Name
-* Second Last Name
-* ID Document
-* Gender
-* Age
+* First Name * 
+* Mid Name 
+* First Last Name * 
+* Second Last Name * 
+* Document type (Country ID, Passport ID) * 
+* Document ID * 
+* Sex * 
+* Age * 
+* Number of family members at home
 
 ## TRAJECTORY
 Transportation date*
@@ -32,3 +34,4 @@ I declare that my displacement is related with first necessity and the necessary
 * City
 * Address  
 * Zip code
+
