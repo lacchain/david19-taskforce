@@ -12,6 +12,7 @@
 
 ## I RESPONSIBLY DECLARE THAT as by (date)*
 * I have been diagnosed with Corona Virus by a medical entity 
+* Name of the entitty:
 
 ## CONFINEMENT PREMISES DATA
 * Region
