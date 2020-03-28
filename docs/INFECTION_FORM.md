@@ -1,12 +1,14 @@
 # INFECTION FORM
 ## PERSONAL DATA
-* First Name
-* Mid Name
-* First Last Name
-* Second Last Name
-* ID Document
-* Gender
-* Age
+* First Name * 
+* Mid Name 
+* First Last Name * 
+* Second Last Name * 
+* Document type (Country ID, Passport ID) * 
+* Document ID * 
+* Sex * 
+* Age * 
+* Number of family members at home
 
 ## I RESPONSIBLY DECLARE THAT as by (date)*
 * I have been diagnosed with Corona Virus by a medical entity 
@@ -17,3 +19,4 @@
 * City
 * Address
 * Zip code
+
