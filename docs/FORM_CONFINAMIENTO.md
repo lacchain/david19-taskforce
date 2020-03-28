@@ -2,17 +2,13 @@
 
 ## DATOS PERSONALES 
 
-Nombre* 
-
-Primer apellido* 
-
-Segundo apellido* 
-
-Documento de identificación* 
-
-Edad* 
-
-Sexo* 
+* Nombre*  
+* Primer apellido*  
+* Segundo apellido* 
+* Tipo de documento de identificación (passaporte, documento nacional)* 
+* Número de identificación*
+* Edad* 
+* Sexo (masculino, femenino)* 
 
 ## DECLARO RESPONSABLEMENTE que con fecha [*]  
 
@@ -23,10 +19,7 @@ Finalizo mi periodo de cuarentena-confinamiento
 
 ## DATOS LUGAR DE CONFINAMIENTO 
 
-Código postal* 
-
-Provincia* 
-
-Comarca* 
-
-Municipio* 
+* País* 
+* Estado/Departamento/Provincia* 
+* Municipio* 
+* Calle 
