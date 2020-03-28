@@ -1,4 +1,4 @@
-# FORMULARIO DE CONFINAMIENTO
+# FORMULARIO DE CUARENTENA
 
 ## DATOS PERSONALES 
 
@@ -9,12 +9,13 @@
 * Número de identificación*
 * Edad* 
 * Sexo (masculino, femenino)* 
+* Número total de personas en quarentena en la casa
 
 ## DECLARO RESPONSABLEMENTE que con fecha [*]  
 
-Inicio mi periodo de cuarentena-confinamiento 
+Inicio mi periodo de cuarentena 
 
-Finalizo mi periodo de cuarentena-confinamiento 
+Finalizo mi periodo de cuarentena
 
 
 ## DATOS LUGAR DE CONFINAMIENTO 
