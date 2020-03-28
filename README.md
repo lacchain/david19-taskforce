@@ -6,7 +6,7 @@ COVID-19PAct® is a task force where different LACChain partners collaborate to 
 
 * Create a single smart contract that will register all the cryptographyc proofs of the credentials so every app whitelisted can register the proofs on it, and everyone can verify them against it.
 
-* Create a map where pseudonymous citizens are displayed with different colors depending on if they are health and isolatade/quarantined (green), interruption of isolation/quarantine for a permitted reason (yellow), with symptoms (orange), infected (red), or recovered (purple). The only information that is collected is age, sex, location, and information to notarize.
+* Create a map where pseudonymous information about citizens is displayed with different colors depending on if they are health and isolatade/quarantined (green), interruption of isolation/quarantine for a permitted reason (yellow), with symptoms (orange), infected (red), or recovered (purple). The only information that is collected is age, sex, location, and information to notarize.
 
 ## 1. Definition of the information to be notarized 
 
