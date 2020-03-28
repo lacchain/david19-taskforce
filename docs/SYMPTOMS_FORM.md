@@ -11,13 +11,14 @@
 * Number of family members at home
 
 ## I RESPONSIBLY DECLARE THAT as by (date)*
-* I have been diagnosed with Corona Virus by a medical entity
-* Name of the entity:
+* I have fever
+* I have cough and breathing issues
+* I have fever cough and breathing issues
+(Choose one)
 
 ## CONFINEMENT PREMISES DATA
-* Region
-* Country
-* City
+* Country*
+* City*
 * Address
-* Zip code
+* Zip code*
 
