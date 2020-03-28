@@ -24,11 +24,10 @@ I declare that my displacement is related with first necessity and the necessary
 ## INITIAL LOCATION
 * Country * 
 * City *
-* Address *  
+* Address
 * Zip code *
 
 ## DESTINATION
-* Region *
 * Country *
 * City *
 * Address  
