@@ -1,7 +1,5 @@
 # RECOVERY FORM
 ## PERSONAL DATA
-# INFECTION FORM
-## PERSONAL DATA
 * First Name * 
 * Mid Name 
 * First Last Name * 
@@ -10,25 +8,24 @@
 * Document ID * 
 * Sex (male, female) * 
 * Age * 
-* Number of family members at home
+* Number of prople members at home
 
 ## I RESPONSIBLY DECLARE THAT as by (date)*
 * I have been diagnosed with Corona Virus by a medical entity 
 
 ## CONFINEMENT PREMISES DATA
-* Region
-* Country
-* City
+* Country *
+* City *
 * Address
-* Zip code
+* Zip code *
 
 ## I RESPONSIBLY DECLARE THAT as by (date)
 * I have recovered from the Corona Virus (personal perception)
 * I have recovered from the Corona Virus (verified by a medical entity)
+* Name of the entity:
 
 ## CONFINEMENT PREMISES DATA
-* Region
-* Country
-* City
+* Country *
+* City *
 * Address
-* Zip code
+* Zip code *
