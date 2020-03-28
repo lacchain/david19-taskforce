@@ -21,21 +21,15 @@
 
 ## DIRECCIÓN DE ORIGEN
 
-Código postal* 
-
-Provincia* 
-
-Comarca* 
-
-Municipio* 
+* País* 
+* Estado/Departamento/Provincia* 
+* Municipio* 
+* Calle 
 
 
 ## DIRECCIÓN DE DESTINO
 
-Código postal* 
-
-Provincia* 
-
-Comarca* 
-
-Municipio* 
+* País* 
+* Estado/Departamento/Provincia* 
+* Municipio* 
+* Calle 
