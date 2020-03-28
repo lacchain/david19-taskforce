@@ -1,7 +1,5 @@
 # CONFINEMENT FORM
 ## PERSONAL DATA
-# INFECTION FORM
-## PERSONAL DATA
 * First Name * 
 * Mid Name 
 * First Last Name * 
@@ -21,15 +19,3 @@
 * City
 * Address
 * Zip code
-
-## I RESPONSIBLY DECLARE THAT as by (date)
-I start my quarantine process
-I finish my quarantine process
-
-## CONFINEMENT PREMISES DATA
-
-* Region * 
-* Country * 
-* City * 
-* Address  
-* Zip code *
