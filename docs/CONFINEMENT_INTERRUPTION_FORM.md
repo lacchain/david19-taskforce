@@ -8,7 +8,7 @@
 * Document ID * 
 * Sex (male,female) * 
 * Age * 
-* Number of family members at home
+* Number of people at home
 
 ## TRAJECTORY
 Transportation date*
@@ -22,16 +22,15 @@ I declare that my displacement is related with first necessity and the necessary
 * Necessity situation or reasons of force majeure 
 
 ## INITIAL LOCATION
-* Region
-* Country
-* City
-* Address  
-* Zip code
+* Country * 
+* City *
+* Address *  
+* Zip code *
 
 ## DESTINATION
-* Region
-* Country
-* City
+* Region *
+* Country *
+* City *
 * Address  
-* Zip code
+* Zip code *
 
