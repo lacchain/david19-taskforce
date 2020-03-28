@@ -1,17 +1,17 @@
 # SYMPTOMS FORM
 ## PERSONAL DATA
-* First Name
-* Mid Name
-* First Last Name
-* Second Last Name
-* ID Document
-* Gender
-* Age
+* First Name * 
+* Mid Name 
+* First Last Name * 
+* Second Last Name * 
+* Document type (Country ID, Passport ID) * 
+* Document ID * 
+* Sex (male, female) * 
+* Age * 
+* Number of family members at home
 
-## I RESPONSIBLY DECLARE THAT as by (date)
-* I have cough and fever
-* I have breathing difficulties
-* I have cough, fever and breathing difficulties
+## I RESPONSIBLY DECLARE THAT as by (date)*
+* I have been diagnosed with Corona Virus by a medical entity 
 
 ## CONFINEMENT PREMISES DATA
 * Region
@@ -19,3 +19,4 @@
 * City
 * Address
 * Zip code
+
