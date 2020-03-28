@@ -8,14 +8,13 @@
 * Document ID * 
 * Sex (male, female) * 
 * Age * 
-* Number of family members at home
+* Number of people at home
 
 ## I RESPONSIBLY DECLARE THAT as by (date)*
-* I have been diagnosed with Corona Virus by a medical entity 
+* I start quarantine
 
 ## CONFINEMENT PREMISES DATA
-* Region
-* Country
-* City
+* Country * 
+* City *
 * Address
-* Zip code
+* Zip code * 
