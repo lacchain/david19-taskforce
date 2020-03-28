@@ -1,31 +1,25 @@
-# FORMULARIO INFECCIÓN 
+# FORMULARIO DE INFECCIÓN
 
 ## DATOS PERSONALES 
 
-Nombre* 
-
-Primer apellido* 
-
-Segundo apellido* 
-
-Documento de identificación* 
-
-Edad* 
-
-Sexo* 
-
+* Nombre* 
+* Primer apellido* 
+* Segundo apellido* 
+* Tipo de documento de identificación*
+* Documento de identificación* 
+* Edad* 
+* Sexo (mascuilino, femenino)* 
+* Número de personas en la casa en cuarentena
 
 ## DECLARO RESPONSABLEMENTE que con fecha [*]  
 
-He sido diagnosticado Corona Virus por una entidad médica 
+* He susido diagnosticado Coronavirus por una entidad médica
+* Indicar nombre de la entidad:
 
 
 ## DATOS LUGAR DE CONFINAMIENTO 
 
-Código postal* 
-
-Provincia* 
-
-Comarca* 
-
-Municipio* 
+* País*
+* Estado/Departamento/Provincia* 
+* Ciudad/Municipio* 
+* Código postal* 
