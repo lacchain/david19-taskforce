@@ -10,8 +10,10 @@
 * Age * 
 * Number of prople at home
 
-## I RESPONSIBLY DECLARE THAT as by (date)*
-* I have been diagnosed with Corona Virus by a medical entity 
+## I RESPONSIBLY DECLARE THAT as by (date)
+* I have recovered from the Corona Virus (personal perception)
+* I have recovered from the Corona Virus (verified by a medical entity)
+* Name of the entity:
 
 ## CONFINEMENT PREMISES DATA
 * Country *
@@ -19,8 +21,5 @@
 * Address
 * Zip code *
 
-## I RESPONSIBLY DECLARE THAT as by (date)
-* I have recovered from the Corona Virus (personal perception)
-* I have recovered from the Corona Virus (verified by a medical entity)
-* Name of the entity:
+
 
