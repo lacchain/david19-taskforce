@@ -9,7 +9,7 @@
 * Número de identificación*
 * Edad* 
 * Sexo (masculino, femenino)* 
-* Número total de personas en quarentena en la casa
+* Número total de personas en cuarentena en la casa
 
 ## DECLARO RESPONSABLEMENTE que con fecha [*]  
 
