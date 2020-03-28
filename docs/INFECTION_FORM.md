@@ -15,9 +15,8 @@
 * Name of the entitty:
 
 ## CONFINEMENT PREMISES DATA
-* Region
-* Country
-* City
+* Country *
+* City *
 * Address
-* Zip code
+* Zip code *
 
