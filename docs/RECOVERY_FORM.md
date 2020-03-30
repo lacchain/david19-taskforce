@@ -8,7 +8,7 @@
 * Document ID * 
 * Sex (male, female) * 
 * Age * 
-* Number of prople at home
+* Number of people at home
 
 ## I RESPONSIBLY DECLARE THAT as by (date)
 * I have recovered from the Corona Virus (personal perception)
