@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1"
+  ],
+  "id": "http://example.edu/credentials/3732",
+  "type": ["VerifiableCredential", "ConfinementCredential"],
+  "issuer": "did:XXX:1122334455",
+  "issuanceDate": "2020-03-02T19:23:24Z",
+  "credentialSubject": {
+    "id": "did:12345",
+    "confinementDate":"2020-03-01T19:23:24Z",
+    "personalInformation": {
+      "firstName": "Adrian",
+      "midName": "",
+      "firstLastName":"Pareja",
+      "secondLastName":"Abarca",
+      "nickname":"ccamaleon",	
+      "documentType":"CountryID",
+      "documentID":"23434343",
+      "sex":"male",
+      "age":35
+    },
+    "peopleHome":4,
+    "reason":{
+    	"type":"Purchase",
+        "description":"Purchase of first necessity products"  
+     },
+    "location":{
+      "country":"PE",
+      "city":"LIM",
+      "neighborhood":"Lince",
+      "zipCode":"15073"
+    }
+  },
+  "proof": {
+    #DYNAMIC...#
+  }
+}
