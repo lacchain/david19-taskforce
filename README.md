@@ -1,4 +1,4 @@
-# COVID-19Pact LACChain task force
+# DAVID-19Pact LACChain task force
 
 COVID-19PAct® is a task force where different LACChain partners collaborate to lead a campaign to provide useful blockchain-based solutions to combat the spread of the Coronavirus. The goal is to:
 
