@@ -24,7 +24,7 @@ interface ICredentialRegistry {
     
     struct Location{
         bytes32 ubigeo;
-        uint16 zipCode;
+        uint32 zipCode;
     }    
 
     struct CovidMetadata {
@@ -39,7 +39,7 @@ interface ICredentialRegistry {
         bool status;
     }
 
-    function register(bytes32 hash, bytes32 id, uint exp, bool sex, uint8 age, bytes32 location, uint16 zipcode, CovidCode credentialType, InterruptionReason reason) external returns (bool);
+    function register(bytes32 hash, bytes32 id, uint exp, bool sex, uint8 age, bytes32 location, uint32 zipcode, CovidCode credentialType, InterruptionReason reason) external returns (bool);
     
     function revoke(bytes32 hash) external returns (bool);
     
