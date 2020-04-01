@@ -40,8 +40,8 @@ contract CovidCredentialRegistry is ICredentialRegistry, WhitelistedRole {
     return true;
   }
   
-  function verify(bytes32 hash) override external view returns(bool isValid){
-    CovidMetadata memory credential = credentials[hash][msg.sender];
+  function verify(bytes32 hash, address citizen) override external view returns(bool isValid){
+    CovidMetadata memory credential = credentials[hash][citizen];
     require(credential.id!=0,"Credential hash doesn't exist");
     return credential.status;
   }

@@ -43,7 +43,7 @@ interface ICredentialRegistry {
     
     function revoke(bytes32 hash) external returns (bool);
     
-    function verify(bytes32 hash) external view returns (bool isValid);
+    function verify(bytes32 hash, address citizen) external view returns (bool isValid);
 
     event CredentialRegistered(bytes32 indexed hash, address by, bytes32 id, uint iat, bool sex, uint8 age, CovidCode credentialType, InterruptionReason reason);
     event CredentialRevoked(bytes32 indexed hash, address by, uint256 date);

@@ -49,14 +49,14 @@ Also, there are structs defined:
 **Location**
 ```
 struct Location{
-        bytes32 ubigeo;
+        string ubigeo;
         uint16 zipCode;
 } 
 ```
 This struct is used to register a citizen location
-* ubigeo: This field is composed for 3 parts. First part with 3 bytes for country. Using [ISO 3166](https://www.iso.org/iso-3166-country-codes.html) to describe with 3 letters the country. The next 4 bytes to describe the code of the city and rest of bytes to describe a neighborhood.
+* ubigeo: This field is composed for 4 parts. First part for country, using [ISO 3166](https://www.iso.org/iso-3166-country-codes.html) to describe with 3 letters the country. Second part to describe the state of the country. Third part to describe the city of the state and the last part to describe a neighborhood. All parts separated by ':'.
 
-    For example to describe the neighborhood Lince located in Lima-Peru, it will be [PER][LIM0][LINCE00000000000000000000] = 5045524c494d304c494e43453030303030303030303030303030303030303030 
+    For example to describe the neighborhood Lince located in Lima-Peru, it will be PER:LIMA:LIMA:LINCE = 0x5045524c494d304c494e43453030303030303030303030303030303030303030 
 
 * zipcode: Field to know more precisely the location of a citizen.
 
@@ -66,6 +66,7 @@ This struct is used to register a citizen location
 ```
 struct CovidMetadata {
         bytes32 id;
+        uint startDate;
         uint iat;
         uint exp;
         bool sex;
@@ -79,6 +80,7 @@ struct CovidMetadata {
 This struct will save metadata related the verifiable credential and the citizen(user) who register the covid verifiable credential.
 
 * id: is an unique citizen(user) identifier. For Example: 0x93FA3E4624676F2E9AA143911118B4547087E9B6E0B6076F2E1027D7A2DA2B0A
+* startDate: datetime in milliseconds when the citizen started your confinement, happened an interruption, etc.
 * iat: the timestamp in milliseconds when the credential is issued. For example: 123456
 * exp: the timestamp in milliseconds when the credential expires. For example: 124000
 * sex: male or female (true or false). For example true for male.
@@ -106,7 +108,7 @@ This function will be executed by the organizations that have previously been as
 
 **Register covid credential**
 
-`function register(bytes32 hash, bytes32 id, uint exp, bool sex, uint8 age, bytes32 ubigeo, uint32 zipcode, CovidCode credentialType, InterruptionReason reason) override external returns(bool)`
+`function register(bytes32 hash, bytes32 id, uint startDate, uint exp, bool sex, uint8 age, bytes32 ubigeo, uint32 zipcode, CovidCode credentialType, InterruptionReason reason) override external returns(bool)`
 
 This function register a new covid credential and metadata from a whitelisted address. 
 
@@ -118,6 +120,7 @@ For example, the parameters to register a covid credential could be:
 
 * hash: 0x7A906FA6137E4325646E8F8814C4F719345D50C1BB056FCF78A2A031A6A584E0
 * id: 0x93FA3E4624676F2E9AA143911118B4547087E9B6E0B6076F2E1027D7A2DA2B0A
+* startDate: 1586571297000 (Sat Apr 11 2020 02:14:57 UTC)
 * exp: 1586771297000 (Mon Apr 13 2020 09:48:17 UTC)
 * sex: True
 * age: 35
@@ -141,4 +144,13 @@ This function revoke a covid credential previously registered
 the requirements for the credential to be revoked are that: 
 * only the same address that registered the credential can revoke it (the credential exists) and that the credential is in a valid state.
 
+**Verify a credential**
 
+`
+function verify(bytes32 hash, address citizen) override external view returns(bool isValid)
+`
+
+This function verify if a credential is valid.
+
+* hash: this parameter is the hash of the verifiable credential that will be verified.
+* citizen: address of a citizen who generated the credential.
