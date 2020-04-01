@@ -103,12 +103,21 @@ Credential proofs: The implementation chosen is up to the app provider.
 
 Frequency of generation of credentials: Only one credential of each type can be generated per person per day. Except the credential "isolation" that can be generated twice, before and after the generation of the credential "interruption of isolation".
 
-Compatibility of credentials: The credentials "Isolation" and "Interruption of isolation" can't be active at the same time for the same person. One one is generated, the other has to be changed its status to "revoked". The credentials "symptoms", "infection", and "ecovery" can't be active at the same time for the same person. One one is generated, the other ones have to be changed their status to "revoked".
+Compatibility of credentials: The credentials "Isolation" and "Interruption of isolation" can't be active at the same time for the same person. One one is generated, the other has to be changed its status to "revoked". The credentials "symptoms", "infection", and "ecovery" can't be active at the same time for the same person. One one is generated, the other ones have to be changed their status to "revoked". 
 
-## 7. Avoidance of duplication of same credentials for same users in different applications (optional)
+Interaction with the [smart-contract-repository](https://github.com/lacchain/DAVID19-taskforce/blob/master/contracts/CovidCredentialRegistry.sol): There are three functions that can be called: "register", "revoke", and "verify". The application will call "register" every time a new credential is generated. The application will call "revoke" everytime a generated credential is no longer valid. The application will call "verify" in order to verify against the smart contract that a credential was register and check its status (applications might also have their own verification methods or proof mechanisms for credential verification, that would not imply calling this smart-contract-database).
 
-Applications will generate an ID by hashing personal data of the people. These information will not be registered in a smart contract nor linked to any other information provided. Only the hash will be shared privately between applications collaborating in this effort in order to notify citizens not to re-register the same info if it was already registered in the other app.
+When calling the function "verify", the hash to be provided is not the hash of the entire credential, but the hash of the fields that go from "personal information" to "zip code". Please, check the verifiable credentials formats [HERE](https://github.com/lacchain/DAVID19-taskforce/edit/master/README.md). The reason why this is done is discussed in the next Section.
 
+## 7. Avoidance of duplication of same credentials for same users in different applications
+
+If a person uses different apps to notarize the same information, in principle the smart-contract-repository could not be able to detect that the  same person is notarizing the same information, as the smart-contract-repository only receives a subset of the fields of the credentials that are pseudonimous data and therefore are not linked to people's real identity. However, in order for the maps to show information that filters duplication as much as possible, we are proposing the following.
+
+As described in Section 3, each application will send to the smart contract not only pseodunimous metadata related to the person and the information notarized (age, sex, id, ...) but also a hash of the verifiable credential. However, the hashes of the verifiable credentials can be different between different apps, even if it is the same person notarizing the same information, as there are fields as the DID of the subject and the timestamp that change in different apps. This is why we are proposing to hash al the fields between "personal information" and "zip code". 
+
+As that is the hash of personal information that could eventually become PII, in those fields theres only piece of information that the user provides and only they know. That's they nickname. 
+
+## 8. Standardizing location format
 
 
 
