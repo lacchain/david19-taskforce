@@ -4,7 +4,7 @@ This document aims to provide documentation for smart contract [CovidCredentialR
 
 ## What is this smart contract for?
 
-This smart contract will serve as a public database to store information self-attested by citizens related to the Coronavitus. The citizens will be able to use different apps/wallets to attest [that information](https://github.com/lacchain/DAVID19-taskforce/tree/master/docs). Apps/wallets will generate [verifiable credentials](https://github.com/lacchain/DAVID19-taskforce/tree/master/verifiableCredentials) for the users that contain the self-attested information. Apps/wallets will also send to this smart contract some of the information from the verifiable credentials that is public and pseudonymous. Then, different services will subscribe to events from the smart contratc in order to generate dashboards and maps that display the public information.
+This smart contract will serve as a public database to store information self-attested by citizens related to the Coronavirus. The citizens will be able to use different apps/wallets to attest [that information](https://github.com/lacchain/DAVID19-taskforce/tree/master/docs). Apps/wallets will generate [verifiable credentials](https://github.com/lacchain/DAVID19-taskforce/tree/master/verifiableCredentials) for the users that contain the self-attested information. Apps/wallets will also send to this smart contract some of the information from the verifiable credentials that is public and pseudonymous. Then, different services will subscribe to events from the smart contratc in order to generate dashboards and maps that display the public information.
 
 Summarizing, this smart contract allows to register, revoke and verify a verifiable credential and metadata related to citizen from a specific country. 
 
@@ -53,24 +53,15 @@ enum InterruptionReason {
 ```
 Which handles reasons for a [confinement interruption form](https://github.com/lacchain/DAVID19-taskforce/tree/master/docs).
 
-Also, there are structs defined:
-
-**Location**
+**Sex**
 ```
-struct Location{
-        string ubigeo;
-        uint16 zipCode;
+enum Sex{
+        Undefined,
+        Male,
+        Female
 } 
 ```
-This struct is used to register a citizen location
-
-* ubigeo: This field is composed for 4 parts. The first part is to indicate the country, using [ISO 3166](https://www.iso.org/iso-3166-country-codes.html) to describe the counetry with 3 letters. The second part describes the state of the country. The third part describes the city of the state and the last part to describe a neighborhood. All parts separated by ':'.
-
-    For example to describe the neighborhood Lince located in Lima-Peru, it will be PER:LIMA:LIMA:LINCE = 0x5045524c494d304c494e43453030303030303030303030303030303030303030 
-
-* zipcode: Field to know more precisely the location of a citizen.
-
-    For example a zipcode can be 15073 to determine my location
+Which handles sex of a citizen.
 
 **CovidMetadata**
 ```
@@ -79,9 +70,10 @@ struct CovidMetadata {
         uint startDate;
         uint iat;
         uint exp;
-        bool sex;
+        Sex sex;
         uint8 age;
-        Location location;
+        string ubigeo;
+        uint32 zipcode;
         CovidCode credentialType;
         InterruptionReason reason;
         bool status;
@@ -93,9 +85,15 @@ This struct will save metadata related the verifiable credential and the citizen
 * startDate: datetime in milliseconds when the citizen started your confinement, happened an interruption, etc.
 * iat: the timestamp in milliseconds when the credential is issued. For example: 123456
 * exp: the timestamp in milliseconds when the credential expires. For example: 124000
-* sex: male or female (true or false). For example true for male.
+* sex: the Sex enum which is detailed above.
 * age: age of the citizen. For example 35
-* location: the Location Struct wich is detailed above.
+* ubigeo: This field is composed for 4 parts. The first part is to indicate the country, using [ISO 3166](https://www.iso.org/iso-3166-country-codes.html) to describe the counetry with 3 letters. The second part describes the state of the country. The third part describes the city of the state and the last part to describe a neighborhood. All parts separated by ':'.
+
+    For example to describe the neighborhood Lince located in Lima-Peru, it will be PER:LIMA:LIMA:LINCE 
+* zipcode: Field to know more precisely the location of a citizen.
+
+    For example a zipcode can be 15073 to determine my location
+
 * credentialType: the CovidCode enum which is detailed above.
 * reason: the InterruptionReason wich is detailed above.
 * status: The state of the credential. true for valid and false for invalid. 
@@ -118,15 +116,13 @@ This function will be executed by the organizations that have previously been as
 
 **Register covid credential**
 
-`function register(bytes32 hash, bytes32 id, uint startDate, uint exp, bool sex, uint8 age, bytes32 ubigeo, uint32 zipcode, CovidCode credentialType, InterruptionReason reason) override external returns(bool)`
+`function register(bytes32 hash, bytes32 id, uint startDate, uint exp, Sex sex, uint8 age, string calldata ubigeo, uint32 zipcode, CovidCode credentialType, InterruptionReason reason) onlyWhitelisted override external returns(bool)`
 
 This function register a new covid credential and metadata from a whitelisted address. 
 
 * hash: this parameter is the hash of some fields in the verifiable credentials that are common to all the apps. These are the ones that go from "personal information" to "zip code". Check the [Verifiable Credential](https://github.com/lacchain/DAVID19-taskforce/tree/master/verifiableCredentials) structures proposed.
 
-* nickname: this parameter is a nicknamed asked to the citizen via app. The nickname introduces a private fild only know but the user that is concatenated with the other fields of the credential that are public information, so the hash doesn't get close to PII. Apps shall encourage users to use the same nickname in different apps in order to get the same hash from two different apps when the same information is attested by the same user.
-
-The rest of parameters are explained in [`CovidMetadata struct`](###ICredentialRegistry) section.
+The rest of parameters are explained in [`CovidMetadata struct`](#icredentialregistry) section.
 
 For example, the parameters to register a covid credential could be:
 
@@ -134,11 +130,12 @@ For example, the parameters to register a covid credential could be:
 * id: 0x93FA3E4624676F2E9AA143911118B4547087E9B6E0B6076F2E1027D7A2DA2B0A
 * startDate: 1586571297000 (Sat Apr 11 2020 02:14:57 UTC)
 * exp: 1586771297000 (Mon Apr 13 2020 09:48:17 UTC)
-* sex: True
+* sex: Sex.Male (value:1)
 * age: 35
-* ubigeo: 0x5045524c494d304c494e43453030303030303030303030303030303030303030
-* credentialType: CovidCode.Confinement
-* reason: InterruptionReason.None
+* ubigeo: PER:LIM:LIM:LINCE
+* zipcode: 15073
+* credentialType: CovidCode.Confinement (value:0)
+* reason: InterruptionReason.None (value:0)
 
 The requirements for the credential to be registered are that: 
 
@@ -149,7 +146,7 @@ In order to be able to do so, the organization that wishes to be whitelisted can
 **Revoke covid credential**
 
 `
-function revoke(bytes32 hash) override external returns(bool)
+function revoke(bytes32 hash) onlyWhitelisted override external returns(bool)
 `
 
 This function revoke a covid credential previously registered.
