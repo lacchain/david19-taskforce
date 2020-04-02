@@ -10,7 +10,7 @@
     "id": "did:12345",
     "recoveryDate":"2020-03-01T19:23:24Z",
     "givenName": "Adrian",
-    "familyName": ["Pareja", "Abarca"]
+    "familyName": ["Pareja", "Abarca"],
     "nickName": "ccamaleon",
     "sameAs": "urn:pe:dni:23434343",
     "gender":"Male",
@@ -24,7 +24,7 @@
         "zipCode":"15073"
       },
       "numberOfParticipants": 4
-    }
+    },
     "healthCondition":{
       "recoveredMyself":false,
     	"medicalEntity":"ESSALUD"
