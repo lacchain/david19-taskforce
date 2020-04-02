@@ -36,7 +36,7 @@ We are proposing that the IDB team will deploy a single smart contract to serve 
 
 *	Hash of some of the fields of the credential (See Sections 6 and 7)
 * Identificator/id of the user/citicen (not connected to personal data)
-* Sexo
+* Sex
 * Age
 * Location of the person (country, city, and neighborhood)
 * Zip code
@@ -78,7 +78,7 @@ We are also proposing to generate dashboards indicating, at least:
 
 Only the citizens own the credentials and have access and crontrol over all the information they provide. Nobody else (nor the app provider, the blockchain network, or the map displaying the data) has any information other than: 
 
-* Sexo
+* Sex
 * Age
 * Location of the person (country, city, and neighborhood)
 * Zip code
