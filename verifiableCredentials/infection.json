@@ -9,7 +9,7 @@
   "credentialSubject": {
     "id": "did:12345",
     "givenName": "Adrian",
-    "familyName": ["Pareja", "Abarca"]
+    "familyName": ["Pareja", "Abarca"],
     "nickName": "ccamaleon",
     "sameAs": "urn:pe:dni:23434343",
     "gender":"Male",
@@ -25,7 +25,7 @@
       "numberOfParticipants": 4
     },
     "healthCondition": {
-      "diagnosis: "COVID-19",
+      "diagnosis": "COVID-19",
       "diagnosedBy": "ESSALUD",
       "startDate": "2020-03-01T19:23:24Z"
     }
