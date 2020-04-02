@@ -87,7 +87,7 @@ This struct will save metadata related the verifiable credential and the citizen
 * exp: the timestamp in milliseconds when the credential expires. For example: 124000
 * sex: the Sex enum which is detailed above.
 * age: age of the citizen. For example 35
-* ubigeo: This field is composed for 4 parts. The first part is to indicate the country, using [ISO 3166](https://www.iso.org/iso-3166-country-codes.html) to describe the country with 3 letters. The second part describes the state of the country. The third part describes the city of the state, using [UNCECE](https://www.unece.org/cefact/locode/welcome.html) codes and the last part to describe a neighborhood. All parts separated by ':'.
+* ubigeo: This field is composed for 4 parts. The first part is to indicate the country, using [UNCECE](https://www.unece.org/cefact/locode/welcome.html) to describe the country with 3 letters. The second part describes the state of the country. The third part describes the city of the state, using [UNCECE](https://www.unece.org/cefact/locode/welcome.html) codes and the last part to describe a neighborhood. All parts separated by ':'.
 
     For example to describe the neighborhood Lince located in Lima-Peru, it will be PER:LIMA:LIMA:LINCE 
 * zipcode: Field to know more precisely the location of a citizen.
