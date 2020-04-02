@@ -9,7 +9,6 @@
   "credentialSubject": {
     "id": "did:12345",
     "givenName": "Adrian",
-    "middleName": "Joe", // Optional
     "familyName": ["Pareja", "Abarca"]
     "nickName": "ccamaleon",
     "sameAs": "urn:pe:dni:23434343",
@@ -21,9 +20,10 @@
     },
     "confinement": {
       "location": {
-        "addressCountry":"PE",
-        "addressRegion": ["Lima", "LIM"],
-        "addressLocality":"Lince",
+        "addressCountry":"PE", // Follow UN/LOCODE https://www.unece.org/cefact/locode/welcome.html
+        "addressState": "Lima",    
+        "addressCity": "LIM", // Follow UN/LOCODE https://www.unece.org/cefact/locode/welcome.html
+        "addressLocality": "Lince",
         "zipCode":"15073"
       },
       "numberOfParticipants": 4
