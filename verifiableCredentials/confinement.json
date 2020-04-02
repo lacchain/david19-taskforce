@@ -17,7 +17,7 @@
       "confinement": {
         "location": {
           "addressCountry":"PE", // Follow UN/LOCODE https://www.unece.org/cefact/locode/welcome.html
-          "addressRegion": ["Lima", "LIM"], // [State/Province/Department, City] - For the second field, follow UN/LOCODE https://www.unece.org/cefact/locode/welcome.html
+          "addressRegion": ["Lima", "LIM"], // ["State/Province/Department", "City"] - For the second field, follow UN/LOCODE https://www.unece.org/cefact/locode/welcome.html
           "addressLocality":"Lince",
           "zipCode":"15073"
         },
