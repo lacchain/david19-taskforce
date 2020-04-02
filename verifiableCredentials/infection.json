@@ -10,7 +10,7 @@
     "id": "did:12345",
     "givenName": "Adrian",
     "middleName": "Joe", // Optional
-    "familyName": ["Pareja", "Abarca"], // or "Pareja Abarca"
+    "familyName": ["Pareja", "Abarca"]
     "nickName": "ccamaleon",
     "sameAs": "urn:pe:dni:23434343",
     "gender":"Male",
