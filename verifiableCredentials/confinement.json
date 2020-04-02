@@ -8,24 +8,22 @@
     "issuanceDate": "2020-03-02T19:23:24Z",
     "credentialSubject": {
       "id": "did:12345",
-      "confinementDate":"2020-03-01T19:23:24Z",
-      "personalInformation": {
-        "firstName": "Adrian",
-        "midName": "",
-        "firstLastName":"Pareja",
-        "secondLastName":"Abarca",
-        "nickname":"ccamaleon",	
-        "documentType":"CountryID",
-        "documentID":"23434343",
-        "sex":"male",
-        "age":35
-      },
-      "peopleHome":4,
-      "location":{
-        "country":"PE",
-        "city":"LIM",
-        "neighborhood":"Lince",
-        "zipCode":"15073"
+      "givenName": "Adrian",
+      "middleName": "Joe", // Optional
+      "familyName": ["Pareja", "Abarca"], // or "Pareja Abarca"
+      "nickName": "ccamaleon",
+      "sameAs": "urn:pe:dni:23434343",
+      "gender":"Male",
+      "birthDate": "YYYY", // Year only is enough since we want the age
+      "confinement": {
+        "location": {
+          "addressCountry":"PE",
+          "addressRegion": ["Lima", "LIM"],
+          "addressLocality":"Lince",
+          "zipCode":"15073"
+        },
+        "numberOfParticipants": 4,
+        "startDate": "2020-03-01T19:23:24Z"
       }
     },
     "proof": {
