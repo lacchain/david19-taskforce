@@ -13,7 +13,7 @@
     "familyName": ["PAREJA", "ABARCA"],
     "nickName": "CCAMALEON",
     "sameAs": "urn:pe:dni:23434343",
-    "gender":"MALE",
+    "sex":"MALE",
     "birthDate": "YYYY", // Year only is enough since we want the age
     "confinement": {
       "location": {
