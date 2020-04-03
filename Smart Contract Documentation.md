@@ -148,7 +148,7 @@ To generate the hash we take all the fields of the credentialSubject:
 ```
 we get out the id field from the credentialSubject object, remove the white spaces, order fields alphabetically (a-z) and finally put the values in capital letters. For example for this case, the object from which we would generate the hash, would be like this:
 ```json
-"credentialSubject":{"birthDate":"YYYY","confinement":{"location":{"addressCountry":"PE","addressLocality":"LINCE","addressRegion":["LIMA","LIM"],"zipCode":"15073"},"numberOfParticipants": 4,"startDate":"2020-03-01T19:23:24Z"},"familyName":["PAREJA","ABARCA"],"givenName":"ADRIAN","nickName":"CCAMALEON","sameAs": "urn:pe:dni:23434343","sex":"MALE"}
+"credentialSubject":{"birthDate":"YYYY","confinement":{"location":{"addressCountry":"PE","addressLocality":"LINCE","addressRegion":["LIMA","LIM"],"zipCode":"15073"},"numberOfParticipants":4,"startDate":"2020-03-01T19:23:24Z"},"familyName":["PAREJA","ABARCA"],"givenName":"ADRIAN","nickName":"CCAMALEON","sameAs":"urn:pe:dni:23434343","sex":"MALE"}
 ```
 Finally to obtain the hash use the algorithm sha-256, which would be:
 F094F56522F9EAD2305CB4B2BC84B12409556AC76F613E2448EBE320C3CDA947
@@ -161,9 +161,9 @@ For example, the parameters to register a covid credential could be:
 * id: 0x93FA3E4624676F2E9AA143911118B4547087E9B6E0B6076F2E1027D7A2DA2B0A
 * startDate: 1586571297000 (Sat Apr 11 2020 02:14:57 UTC)
 * exp: 1586771297000 (Mon Apr 13 2020 09:48:17 UTC)
-* sex: Sex.Male (value:1)
+* sex: Sex.Male (value:0)
 * age: 35
-* ubigeo: PER:LIM:LIM:LINCE
+* ubigeo: PE:LIMA:LIM:LINCE
 * zipcode: 15073
 * credentialType: CovidCode.Confinement (value:0)
 * reason: InterruptionReason.None (value:0)
@@ -198,3 +198,7 @@ This function verify if a credential is valid.
 
 * hash: this parameter is the hash of the verifiable credential that will be verified.
 * citizen: address of a citizen who generated the credential.
+
+## Test the Smart Contract 
+
+Smart Contract on Lacchain --> 0x9938D9B7777039915212C58AD3A5E11aa17914cD 
