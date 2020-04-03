@@ -21,13 +21,14 @@ interface ICredentialRegistry {
     }
     
     enum Sex{
-        Undefined,
         Male,
-        Female
+        Female,
+        Unspecified,
+        Other
     }    
 
     struct CovidMetadata {
-        bytes32 id;
+        bytes32 subjectId;
         uint startDate;
         uint iat;
         uint exp;
@@ -47,5 +48,4 @@ interface ICredentialRegistry {
 
     event CredentialRegistered(bytes32 indexed hash, address by, bytes32 id, uint startDate, uint iat, Sex sex, string ubigeo, uint32 zipcode, CovidCode credentialType, InterruptionReason reason);
     event CredentialRevoked(bytes32 indexed hash, address by, uint256 date);
-}
 }
