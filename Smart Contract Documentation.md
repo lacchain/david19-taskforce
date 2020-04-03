@@ -121,7 +121,7 @@ This function will be executed by the organizations that have previously been as
 
 This function register a new covid credential and metadata from a whitelisted address. 
 
-* hash: this parameter is the hash of some fields in the verifiable credentials that are common to all the apps. These are the ones that go from "personal information" to "zip code". Check the [Verifiable Credential](https://github.com/lacchain/DAVID19-taskforce/tree/master/verifiableCredentials) structures proposed.
+* hash: this parameter is the hash of some fields in the verifiable credentials that are common to all the apps. These are the ones that go from "givenName" to "startDate". Check the [Verifiable Credential](https://github.com/lacchain/DAVID19-taskforce/tree/master/verifiableCredentials) structures proposed.
 
 To generate the hash we take all the fields of the credentialSubject:
 
