@@ -9,7 +9,7 @@
   "credentialSubject": {
     "id": "did:12345",
     "recoveryDate":"2020-03-01T19:23:24Z",
-    "givenName": "Adrian"
+    "givenName": "Adrian",
     "familyName": ["Pareja", "Abarca"],
     "nickName": "ccamaleon",
     "sameAs": "urn:pe:dni:23434343",
