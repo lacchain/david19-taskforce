@@ -22,7 +22,7 @@ I declare that my displacement is related with first necessity and the necessary
 * Necessity situation or reasons of force majeure 
 
 ## INITIAL LOCATION
-* Geolocation *
+* Geolocation * // (It will only be taken up to the second decimal of longitud and latitud, which is approximately equivalent to 1.1 km)
 
 ## DESTINATION
 * Country *
@@ -30,6 +30,3 @@ I declare that my displacement is related with first necessity and the necessary
 * City *
 * Locality
 * Zip code
-
-
-(It will only be taken up to the second decimal of longitud and latitud, which is approximately equivalent to 1.1 km)
