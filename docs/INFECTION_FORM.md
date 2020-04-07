@@ -10,7 +10,7 @@
 * Age * 
 * Number of family members at home
 
-* Nickname // (Same for all applocations)
+* Nickname * // (Same for all applications)
 
 ## I RESPONSIBLY DECLARE THAT as by (date)*
 * I have been diagnosed with Corona Virus by a medical entity 
