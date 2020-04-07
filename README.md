@@ -93,13 +93,34 @@ DID methods: The implementation chosen is up to the app provider.
 
 Credential proofs: The implementation chosen is up to the app provider.
 
-Frequency of generation of credentials: Only one credential of each type can be generated per person per day. Except the credential "isolation" that can be generated twice, before and after the generation of the credential "interruption of isolation".
-
-Compatibility of credentials: The credentials "Isolation" and "Interruption of isolation" can't be active at the same time for the same person. One one is generated, the other has to be changed its status to "revoked". The credentials "symptoms", "infection", and "ecovery" can't be active at the same time for the same person. One one is generated, the other ones have to be changed their status to "revoked". 
-
 Interaction with the [smart-contract-repository](https://github.com/lacchain/DAVID19-taskforce/blob/master/contracts/CovidCredentialRegistry.sol): There are three functions that can be called: "register", "revoke", and "verify". The application will call "register" every time a new credential is generated. The application will call "revoke" everytime a generated credential is no longer valid. The application will call "verify" in order to verify against the smart contract that a credential was register and check its status (applications might also have their own verification methods or proof mechanisms for credential verification, that would not imply calling this smart-contract-database).
 
 When calling the function "verify", the hash to be provided is not the hash of the entire credential, but the hash of the fields that go from "personal information" to "zip code". Please, check the verifiable credentials formats [HERE](https://github.com/lacchain/DAVID19-taskforce/edit/master/README.md). The reason why this is done is discussed in the next Section.
+
+Frequency of generation of credentials:
+
+* Confinement interruption: maximum 3 daily.
+* Infection/Recovery: maximum 1 weekly.
+* Symptoms: maximum 2 daily.
+
+Compatibility of credentials (by revokation we understand that the app shall call the function revoke in the smart contract to change the status of the credential to "revoked"):
+* Confinement Interruption revokes Confinement credential and viceversa.
+* Recovery revokes Infection and viceversa.
+* In order to revoke no symtomps, a new Symtomps credentials will be issued with the value ¨no symptomps¨.
+* Any credential revokes the same credential of the same type (to negate it or to update it). The case in the previous bullet point is actually a subcase of this condition.
+
+Expiration of credentials:
+* Confinement: 1 week.
+* Confinement interruption: 1 day.
+* Infection: 2 weeks.
+* Symptoms: 1 week.
+* Recovery: undefined. 
+
+Other considerations:
+* When a sex is not provided by the citizen (as it is an optional field), the value for sex sent to the smart contract shall be "undefined".
+* The value for the type of interruption sent the smart contrat is the first word of the option chosen.
+* Apps should use the geolocation to map the location of the user. Latitud and altitud will be taken with a precision of the second decimal, which is approximatelly, worth up to 1.1 km.
+* The hash function is SHA-256.
 
 ## 7. Avoidance of duplication of same credentials for same users in different applications
 
