@@ -11,8 +11,9 @@
 
 * Nickname *  // (same for all applications)
 
-## TRAJECTORY
+## REASON
 Transportation date*
+
 I declare that my displacement is related with first necessity and the necessary activity that I following express:
 * Purchase of food, pharmaceutical, and first necessity products 
 * Attendance to a health center, service, or institution 
