@@ -11,7 +11,7 @@
 * Sexo (mascuilino, femenino, otro)
 * Número de personas en la casa en cuarentena
 
-* Nickname // (común para todos los aplicativos)
+* Nickname * // (común para todos los aplicativos)
 
 ## DECLARO RESPONSABLEMENTE que con fecha [*]  
 
