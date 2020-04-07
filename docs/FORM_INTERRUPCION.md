@@ -8,7 +8,7 @@
 * Tipo de documento de identificación*
 * Documento de identificación* 
 * Edad* 
-* Sexo (mascuilino, femenino)* 
+* Sexo (mascuilino, femenino, otro) 
 * Número de personas en la casa en cuarentena
 
 ## TRAYECTO
@@ -25,19 +25,18 @@ Declaro que mi desplazamiento está relacionado con la actividad necesaria y de 
 * Imprescindible desplazamiento a entidad financiera o de seguro.  
 * Causa de fuerza mayor o situación de necesidad. 
 
+## DATOS LUGAR DE CONFINAMIENTO 
 
-## DIRECCIÓN DE ORIGEN
-
-* País*
-* Estado/Departamento/Provincia* 
-* Ciudad/Municipio* 
-* Código postal* 
-
+* Geolocalización * // Solo se tomará hasta un máximo de precisión del segundo decimal de longitud y latitud, lo que aquivale aproximadamente a 1,1 km de precisión.
 
 ## DIRECCIÓN DE DESTINO
 
 * País*
 * Estado/Departamento/Provincia* 
 * Ciudad/Municipio* 
-* Código postal* 
+* Localidad/vecindario 
+* Codigo postal
+
+
+
 
