@@ -17,5 +17,5 @@
 * Name of the entity:
 
 ## LOCATION
-* Geolocation // (It will only be taken up to the second decimal of longitud and latitud, which is approximately equivalent to 1.1 km)
+* Geolocation * // (It will only be taken up to the second decimal of longitud and latitud, which is approximately equivalent to 1.1 km)
 
