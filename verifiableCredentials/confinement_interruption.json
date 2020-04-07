@@ -10,21 +10,29 @@
     "id": "did:12345",
     "givenName": "Adrian",
     "familyName": ["Pareja", "Abarca"],
-    "nickName": "ccamaleon"
+    "nickName": "ccamaleon",
     "sameAs": "urn:pe:dni:23434343",
     "sex":"Male",
     "birthDate": "YYYY", // Year only is enough since we want the age
     "confinement": {
+      "geo": {
+        "latitude": "-12.34", //with 2 decimals
+        "longitude": "77.02" //with 2 decimals
+      },
+      "numberOfParticipants": 4,
+      "startDate": "2020-03-01T19:23:24Z"
+    },
+    "confinementInterruption": {
+      "geo": {
+        "latitude": "-12.34", //with 2 decimals
+        "longitude": "77.02" //with 2 decimals
+      },
       "location": {
         "addressCountry":"PE", // Follow UN/LOCODE https://www.unece.org/cefact/locode/welcome.html
         "addressRegion": ["LIM", "LIM"], // ["State/Province/Department", "City"] - Follow UN/LOCODE https://www.unece.org/cefact/locode/welcome.html
         "addressLocality":"LINCE",
         "zipCode":"15073"
       },
-      "numberOfParticipants": 4,
-      "startDate": "2020-03-01T19:23:24Z"
-    },
-    "confinementInterruption": {
       "reason":{
         "type":"Purchase",
         "description":"Purchase of first necessity products"  
