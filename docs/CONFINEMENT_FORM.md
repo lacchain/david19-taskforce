@@ -13,7 +13,5 @@
 ## I RESPONSIBLY DECLARE THAT as by (date)*
 * I start quarantine
 
-## CONFINEMENT PREMISES DATA
-* Geolocation *
-
-(It will only be taken up to the second decimal of longitud and latitud, which is approximately equivalent to 1.1 km)
+## LOCATION
+* Geolocation * // (It will only be taken up to the second decimal of longitud and latitud, which is approximately equivalent to 1.1 km)
