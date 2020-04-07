@@ -11,6 +11,8 @@
 * Sexo (masculino, femenino, otro)
 * Número total de personas en cuarentena en la casa
 
+* Nickname // (común para todos los aplicativos)
+
 ## DECLARO RESPONSABLEMENTE que con fecha [*]  
 
 Inicio mi periodo de cuarentena 
