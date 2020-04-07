@@ -16,6 +16,7 @@
 
 ## DECLARO RESPONSABLEMENTE que con fecha [*]  (seleccionar una)
 
+* No tengo síntomas
 * Tengo tos y fiebre  
 * Tengo dificultades respiratorias  
 * Tengo tos, fiebre y dificultades respiratorias 
