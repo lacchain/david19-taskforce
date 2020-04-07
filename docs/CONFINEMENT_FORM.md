@@ -10,6 +10,8 @@
 * Age * 
 * Number of people at home
 
+* Nickname *  // (same for all applications)
+
 ## I RESPONSIBLY DECLARE THAT as by (date)*
 * I start quarantine
 
