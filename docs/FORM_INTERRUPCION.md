@@ -11,6 +11,8 @@
 * Sexo (mascuilino, femenino, otro) 
 * Número de personas en la casa en cuarentena
 
+* Nickname // (común para todos los aplicativos)
+
 ## TRAYECTO
 
 Fecha del desplazamiento * 
