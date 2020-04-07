@@ -12,6 +12,7 @@
 * Nickname * // (Same for all applications)
 
 ## I RESPONSIBLY DECLARE THAT as by (date)*
+* I have no symptoms
 * I have fever
 * I have cough and breathing issues
 * I have fever, cough, annd breathing issues
