@@ -15,7 +15,7 @@
     "sex":"Male",
     "birthDate": "YYYY", // Year only is enough since we want the age
     "signOrSymptom": {
-      "description": ["Fever","Cough","Breathing issues"],
+      "description": ["No symptoms", "Fever","Cough","Breathing issues"],
       "startDate": "2020-03-01T19:23:24Z"
     },
     "confinement": {
