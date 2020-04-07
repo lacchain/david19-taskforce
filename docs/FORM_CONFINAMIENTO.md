@@ -20,7 +20,4 @@ Finalizo mi periodo de cuarentena
 
 ## DATOS LUGAR DE CONFINAMIENTO 
 
-* País* 
-* Estado/Departamento/Provincia* 
-* Municipio* 
-* Calle 
+* Geolocalización * // Solo se tomará hasta un máximo de precisión del segundo decimal de longitud y latitud, lo que aquivale aproximadamente a 1,1 km de precisión.
