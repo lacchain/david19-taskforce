@@ -8,7 +8,7 @@
 * Tipo de documento de identificación*
 * Documento de identificación* 
 * Edad* 
-* Sexo (mascuilino, femenino)* 
+* Sexo (mascuilino, femenino, otro) 
 * Número de personas en la casa en cuarentena
 
 
@@ -19,17 +19,7 @@
 * Tengo tos, fiebre y dificultades respiratorias 
 
 
-## DIRECCIÓN DE ORIGEN
+## DATOS LUGAR DE CONFINAMIENTO 
 
-* País* 
-* Estado/Departamento/Provincia* 
-* Municipio* 
-* Calle 
+* Geolocalización * // Solo se tomará hasta un máximo de precisión del segundo decimal de longitud y latitud, lo que aquivale aproximadamente a 1,1 km de precisión.
 
-
-## DIRECCIÓN DE DESTINO
-
-* País* 
-* Estado/Departamento/Provincia* 
-* Municipio* 
-* Calle 
