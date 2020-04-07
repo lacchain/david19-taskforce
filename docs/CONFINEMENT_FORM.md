@@ -6,7 +6,7 @@
 * Second Last Name * 
 * Document type (Country ID, Passport ID) * 
 * Document ID * 
-* Sex (male, female) * 
+* Sex (male, female, other)
 * Age * 
 * Number of people at home
 
@@ -14,7 +14,6 @@
 * I start quarantine
 
 ## CONFINEMENT PREMISES DATA
-* Country * 
-* City *
-* Address
-* Zip code * 
+* Geolocation *
+
+(It will only be taken up to the second decimal of longitud and latitud, which is approximately equivalent to 1.1 km)
