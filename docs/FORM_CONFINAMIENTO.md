@@ -8,7 +8,7 @@
 * Tipo de documento de identificación (passaporte, documento nacional)* 
 * Número de identificación*
 * Edad* 
-* Sexo (masculino, femenino)* 
+* Sexo (masculino, femenino, otro)
 * Número total de personas en cuarentena en la casa
 
 ## DECLARO RESPONSABLEMENTE que con fecha [*]  
