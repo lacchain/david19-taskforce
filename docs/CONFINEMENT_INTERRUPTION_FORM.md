@@ -6,7 +6,7 @@
 * Second Last Name * 
 * Document type (Country ID, Passport ID) * 
 * Document ID * 
-* Sex (male,female) * 
+* Sex (male,female, other) 
 * Age * 
 * Number of people at home
 
