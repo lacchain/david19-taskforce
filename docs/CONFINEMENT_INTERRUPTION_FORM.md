@@ -14,11 +14,11 @@
 ## TRAJECTORY
 Transportation date*
 I declare that my displacement is related with first necessity and the necessary activity that I following express:
-* Purchase of food, pharmaceutical and first necessity products 
-* Attendance to a health center, service or institution 
-* Commuting to work premise, to render professional or enterprise tasks 
+* Purchase of food, pharmaceutical, and first necessity products 
+* Attendance to a health center, service, or institution 
+* Commuting to work premise to render professional or enterprise tasks 
 * Return to residence or home 
-* Assist or attend elder, minors of age, handicapped or vulnerable people 
+* Assist or attend elder, minors of age, handicapped, or vulnerable people 
 * Essential commuting to a financial or insurance entity 
 * Necessity situation or reasons of force majeure 
 
