@@ -11,6 +11,8 @@
 * Sexo (mascuilino, femenino, otro) 
 * Número de personas en la casa en cuarentena
 
+* Nickname // (común para todos los aplicativos)
+
 ## DECLARO RESPONSABLEMENTE que con fecha [*]  
 
 * He superado el virus del Coronavirus (verificado por entidad médica) 
