@@ -73,8 +73,8 @@ struct CovidMetadata {
         uint exp;
         Sex sex;
         uint8 age;
-        string ubigeo;
-        uint32 zipcode;
+        int16 latitude;
+        int16 longitude;
         CovidCode credentialType;
         InterruptionReason reason;
         bool status;
@@ -88,12 +88,12 @@ This struct will save metadata related the verifiable credential and the citizen
 * exp: the timestamp in milliseconds when the credential expires. For example: 124000
 * sex: the Sex enum which is detailed above.
 * age: age of the citizen. For example 35
-* ubigeo: This field is composed for 4 parts. The first part is to indicate the country, using [UNCECE](https://www.unece.org/cefact/locode/service/location.html) to describe the country with 2 letters. The second part describes the state or region of the country. The third part describes the city of the state, using [UNCECE](https://www.unece.org/cefact/locode/service/location.html) codes and the last part to describe a neighborhood. All parts separated by ':'.
+* latitude: This field is to save latitude part of geolocation
 
-    For example to describe the neighborhood Lince located in Lima-Peru, it will be PE:LIMA:LIM:LINCE 
+    For example to describe the latitude the neighborhood Lince located in Lima-Peru (-12.040807), the contract will get -1204, it's necessary to consider the two decimals  
 * zipcode: Field to know more precisely the location of a citizen.
 
-    For example a zipcode can be 15073 to determine my location
+    For example to describe the longitude the neighborhood Lince located in Lima-Peru (77.086474), the contract will get 7708, it's necessary to consider the two decimals
 
 * credentialType: the CovidCode enum which is detailed above.
 * reason: the InterruptionReason wich is detailed above.
@@ -135,11 +135,9 @@ To generate the hash we take all the fields of the credentialSubject:
       "sex":"MALE",
       "birthDate": "YYYY", // Year only is enough since we want the age
       "confinement": {
-        "location": {
-          "addressCountry":"PE", // Follow UN/LOCODE https://www.unece.org/cefact/locode/welcome.html
-          "addressRegion": ["LIMA", "LIM"], // ["State/Province/Department", "City"] - For the second field, follow UN/LOCODE https://www.unece.org/cefact/locode/welcome.html
-          "addressLocality":"LINCE",
-          "zipCode":"15073"
+        "geo": {
+          "latitude":"-12.04",
+          "longitude":"77.08"
         },
         "numberOfParticipants": 4,
         "startDate": "2020-03-01T19:23:24Z"
@@ -148,7 +146,7 @@ To generate the hash we take all the fields of the credentialSubject:
 ```
 we get out the id field from the credentialSubject object, remove the white spaces, order fields alphabetically (a-z) and finally put the values in capital letters. For example for this case, the object from which we would generate the hash, would be like this:
 ```json
-"credentialSubject":{"birthDate":"YYYY","confinement":{"location":{"addressCountry":"PE","addressLocality":"LINCE","addressRegion":["LIMA","LIM"],"zipCode":"15073"},"numberOfParticipants":4,"startDate":"2020-03-01T19:23:24Z"},"familyName":["PAREJA","ABARCA"],"givenName":"ADRIAN","nickName":"CCAMALEON","sameAs":"urn:pe:dni:23434343","sex":"MALE"}
+"credentialSubject":{"birthDate":"YYYY","confinement":{"geo":{"latitude":"-12.04","longitude":"77.08"},"numberOfParticipants":4,"startDate":"2020-03-01T19:23:24Z"},"familyName":["PAREJA","ABARCA"],"givenName":"ADRIAN","nickName":"CCAMALEON","sameAs":"urn:pe:dni:23434343","sex":"MALE"}
 ```
 Finally to obtain the hash use the algorithm sha-256, which would be:
 F094F56522F9EAD2305CB4B2BC84B12409556AC76F613E2448EBE320C3CDA947
@@ -163,8 +161,8 @@ For example, the parameters to register a covid credential could be:
 * exp: 1586771297000 (Mon Apr 13 2020 09:48:17 UTC)
 * sex: Sex.Male (value:0)
 * age: 35
-* ubigeo: PE:LIMA:LIM:LINCE
-* zipcode: 15073
+* latitude: -1204
+* longitude: 7708
 * credentialType: CovidCode.Confinement (value:0)
 * reason: InterruptionReason.None (value:0)
 
