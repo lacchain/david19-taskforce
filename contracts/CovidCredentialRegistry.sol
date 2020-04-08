@@ -44,9 +44,4 @@ contract CovidCredentialRegistry is ICredentialRegistry, WhitelistedRole {
     require(credential.subjectId!=0,"Credential hash doesn't exist");
     return credential.status;
   }
-  
-  function latitudeLongitude(bytes32 hash, address citizen) external view returns (int16, int16){
-      CovidMetadata memory credential = credentials[hash][citizen];
-      return(credential.latitude, credential.longitude);
-  } 
 }
