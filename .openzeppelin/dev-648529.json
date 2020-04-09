@@ -1,11 +1,11 @@
 {
   "contracts": {
     "CovidCredentialRegistry": {
-      "address": "0x9eA8cB5c2C2490b93A641d41E0226c30686955E5",
-      "constructorCode": "60806040526118bf806100136000396000f3fe",
-      "bodyBytecodeHash": "7d8fdc48739f3425857a2036014af591190fa04cdd3c7b33f14a5078f66ec925",
-      "localBytecodeHash": "10aceb51ffab7c2953bb84298c74e479bcd2a16ecdaad762a6193584f5673927",
-      "deployedBytecodeHash": "10aceb51ffab7c2953bb84298c74e479bcd2a16ecdaad762a6193584f5673927",
+      "address": "0x43fC0D0d6d396126085020294611DbbB64811CF3",
+      "constructorCode": "6080604052611890806100136000396000f3fe",
+      "bodyBytecodeHash": "c2d570750ff8d16660dff910c3db4d1a595146cd6a1ebe628ebbe55777871130",
+      "localBytecodeHash": "3735a862469d05787af8641920f2b88ca25feab9802828ec08d698baec570dc9",
+      "deployedBytecodeHash": "3735a862469d05787af8641920f2b88ca25feab9802828ec08d698baec570dc9",
       "types": {
         "t_bool": {
           "id": "t_bool",
@@ -50,69 +50,63 @@
           "members": [
             {
               "label": "subjectId",
-              "astId": 700,
+              "astId": 691,
               "type": "t_bytes32",
               "src": "535:17:6"
             },
             {
               "label": "startDate",
-              "astId": 702,
+              "astId": 693,
               "type": "t_uint256",
               "src": "562:14:6"
             },
             {
               "label": "iat",
-              "astId": 704,
+              "astId": 695,
               "type": "t_uint256",
               "src": "586:8:6"
             },
             {
               "label": "exp",
-              "astId": 706,
+              "astId": 697,
               "type": "t_uint256",
               "src": "604:8:6"
             },
             {
               "label": "sex",
-              "astId": 708,
+              "astId": 699,
               "type": "t_enum<ICredentialRegistry.Sex>",
               "src": "622:7:6"
             },
             {
               "label": "age",
-              "astId": 710,
+              "astId": 701,
               "type": "t_uint8",
               "src": "639:9:6"
             },
             {
-              "label": "latitude",
-              "astId": 712,
-              "type": "t_int16",
+              "label": "geoHash",
+              "astId": 703,
+              "type": "t_bytes6",
               "src": "658:14:6"
             },
             {
-              "label": "longitude",
-              "astId": 714,
-              "type": "t_int16",
-              "src": "682:15:6"
-            },
-            {
               "label": "credentialType",
-              "astId": 716,
+              "astId": 705,
               "type": "t_enum<ICredentialRegistry.CovidCode>",
-              "src": "707:24:6"
+              "src": "682:24:6"
             },
             {
               "label": "reason",
-              "astId": 718,
+              "astId": 707,
               "type": "t_enum<ICredentialRegistry.InterruptionReason>",
-              "src": "741:25:6"
+              "src": "716:25:6"
             },
             {
               "label": "status",
-              "astId": 720,
+              "astId": 709,
               "type": "t_bool",
-              "src": "776:11:6"
+              "src": "751:11:6"
             }
           ]
         },
@@ -137,10 +131,10 @@
           "kind": "elementary",
           "label": "uint8"
         },
-        "t_int16": {
-          "id": "t_int16",
+        "t_bytes6": {
+          "id": "t_bytes6",
           "kind": "elementary",
-          "label": "int16"
+          "label": "bytes6"
         },
         "t_enum<ICredentialRegistry.CovidCode>": {
           "id": "t_enum<ICredentialRegistry.CovidCode>",
@@ -255,10 +249,10 @@
   "proxies": {
     "David19/CovidCredentialRegistry": [
       {
-        "address": "0x6A1F6FBd029A7b9460F4a5887f5197798650eE3A",
+        "address": "0x5224e254B1A6f1b24324d7C8428F3736c385dE26",
         "version": "1.0.0",
-        "implementation": "0x9eA8cB5c2C2490b93A641d41E0226c30686955E5",
-        "admin": "0xeCc86D9533bf8E13Dee77534a20244A16fbfb164",
+        "implementation": "0x43fC0D0d6d396126085020294611DbbB64811CF3",
+        "admin": "0xD39a9749bE93e956a892CF32059B519d8A770d90",
         "kind": "Upgradeable"
       }
     ]
@@ -266,6 +260,6 @@
   "manifestVersion": "2.2",
   "version": "1.0.0",
   "proxyAdmin": {
-    "address": "0xeCc86D9533bf8E13Dee77534a20244A16fbfb164"
+    "address": "0xD39a9749bE93e956a892CF32059B519d8A770d90"
   }
 }

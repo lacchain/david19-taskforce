@@ -73,8 +73,7 @@ struct CovidMetadata {
         uint exp;
         Sex sex;
         uint8 age;
-        int16 latitude;
-        int16 longitude;
+        bytes6 geoHash;
         CovidCode credentialType;
         InterruptionReason reason;
         bool status;
@@ -88,12 +87,8 @@ This struct will save metadata related the verifiable credential and the citizen
 * exp: the timestamp in milliseconds when the credential expires. For example: 124000
 * sex: the Sex enum which is detailed above.
 * age: age of the citizen. For example 35
-* latitude: This field is to save latitude part of geolocation
-
-    For example to describe the latitude the neighborhood Lince located in Lima-Peru (-12.040807), the contract will get -1204, it's necessary to consider the two decimals  
-* zipcode: Field to know more precisely the location of a citizen.
-
-    For example to describe the longitude the neighborhood Lince located in Lima-Peru (77.086474), the contract will get 7708, it's necessary to consider the two decimals
+* geoHash: the [geoHash](https://en.wikipedia.org/wiki/Geohash) of latitude and longitude with precision 6  
+    For example to describe the neighborhood Lince located in Lima-Peru (-12.0877217, -77.044704), the contract will receive "6mc5qb". Test to get a geoHash [here](https://www.movable-type.co.uk/scripts/geohash.html).
 
 * credentialType: the CovidCode enum which is detailed above.
 * reason: the InterruptionReason wich is detailed above.
@@ -117,7 +112,7 @@ This function will be executed by the organizations that have previously been as
 
 **Register covid credential**
 
-`function register(bytes32 hash, bytes32 id, uint startDate, uint exp, Sex sex, uint8 age, string calldata ubigeo, uint32 zipcode, CovidCode credentialType, InterruptionReason reason) onlyWhitelisted override external returns(bool)`
+`function register(bytes32 hash, bytes32 id, uint startDate, uint exp, Sex sex, uint8 age, bytes6 geoHash, CovidCode credentialType, InterruptionReason reason) onlyWhitelisted override external returns(bool)`
 
 This function register a new covid credential and metadata from a whitelisted address. 
 
@@ -161,8 +156,7 @@ For example, the parameters to register a covid credential could be:
 * exp: 1586771297000 (Mon Apr 13 2020 09:48:17 UTC)
 * sex: Sex.Male (value:0)
 * age: 35
-* latitude: -1204
-* longitude: 7708
+* geoHash: 0x366d63357162 (Hexadecimal value of 6mc5qb)
 * credentialType: CovidCode.Confinement (value:0)
 * reason: InterruptionReason.None (value:0)
 
@@ -174,9 +168,7 @@ In order to be able to do so, the organization that wishes to be whitelisted can
 
 **Revoke covid credential**
 
-`
-function revoke(bytes32 hash) onlyWhitelisted override external returns(bool)
-`
+`function revoke(bytes32 hash) onlyWhitelisted override external returns(bool)`
 
 This function revoke a covid credential previously registered.
 
@@ -188,9 +180,7 @@ the requirements for the credential to be revoked are that:
 
 **Verify a credential**
 
-`
-function verify(bytes32 hash, address citizen) override external view returns(bool isValid)
-`
+`function verify(bytes32 hash, address citizen) override external view returns(bool isValid)`
 
 This function verify if a credential is valid.
 
@@ -215,6 +205,6 @@ If you need to upgrade the smart contract then execute the following command.
 
 ## Test the Smart Contract 
 
-Upgradable Smart Contract on Lacchain --> 0x6A1F6FBd029A7b9460F4a5887f5197798650eE3A 
+Upgradable Smart Contract on Lacchain --> 0x5224e254B1A6f1b24324d7C8428F3736c385dE26 
 
 
