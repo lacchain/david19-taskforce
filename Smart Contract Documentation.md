@@ -197,6 +197,24 @@ This function verify if a credential is valid.
 * hash: this parameter is the hash of the verifiable credential that will be verified.
 * citizen: address of a citizen who generated the credential.
 
+## Deploy and Upgrade Smart Contract
+
+We are using [Openzeppelin Cli](https://docs.openzeppelin.com/cli/2.8/) to deploy the upgradable smart contract.
+
+First, you need to install openzeppelin cli dependencies. 
+
+```$ npm install --save-dev @openzeppelin/cli```
+
+Second, you need to modify the networks.js file to set the node and private key to deploy the smart contract. Next execute the command to deploy. 
+
+```$ npx openzeppelin deploy```
+
+If you need to upgrade the smart contract then execute the following command.
+
+`npx openzeppelin upgrade`
+
 ## Test the Smart Contract 
 
-Smart Contract on Lacchain --> 0x9938D9B7777039915212C58AD3A5E11aa17914cD 
+Upgradable Smart Contract on Lacchain --> 0x6A1F6FBd029A7b9460F4a5887f5197798650eE3A 
+
+
