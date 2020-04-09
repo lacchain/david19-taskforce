@@ -19,9 +19,11 @@
       "startDate": "2020-03-01T19:23:24Z"
     },
     "confinement": {
-      "geo": {
-        "latitude": "-12.34", //with 2 decimals
-        "longitude": "77.02" //with 2 decimals
+      "location": {
+        "geo": {
+          "latitude": "-12.34", //with 2 decimals
+          "longitude": "77.02" //with 2 decimals
+        }
       },
       "numberOfParticipants": 4
     }
