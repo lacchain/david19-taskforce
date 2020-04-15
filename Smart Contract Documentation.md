@@ -139,7 +139,7 @@ This function register a new covid credential and metadata from a whitelisted ad
 ```
 we get out the id field from the credentialSubject object, remove the white spaces, order fields alphabetically (a-z) and finally put the values in capital letters. For example for this case, the object from which we would generate the hash, would be like this:
 ```json
-"credentialSubject":{"birthDate":"YYYY","confinement":{"geo":{"latitude":"-12.04","longitude":"77.08"},"numberOfParticipants":4,"startDate":"2020-03-01T19:23:24Z"},"familyName":["PAREJA","ABARCA"],"givenName":"ADRIAN","nickName":"CCAMALEON","sameAs":"urn:pe:dni:23434343","sex":"MALE"}
+"credentialSubject":{"birthDate":"YYYY","confinement":{"geo":{"latitude":"-12.04","longitude":"77.08"},"numberOfParticipants":4,"startDate":"2020-03-01T19:23:24Z"},"familyName":["PAREJA","ABARCA"],"givenName":"ADRIAN","nickName":"CCAMALEON","sameAs":"URN:PE:DNI:23434343","sex":"MALE"}
 ```
 Finally to obtain the hash use the algorithm sha-256, which would be:
 F094F56522F9EAD2305CB4B2BC84B12409556AC76F613E2448EBE320C3CDA947
