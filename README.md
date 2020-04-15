@@ -119,7 +119,7 @@ Expiration of credentials:
 Other considerations:
 * When a sex is not provided by the citizen (as it is an optional field), the value for sex sent to the smart contract shall be "undefined".
 * The value for the type of interruption sent the smart contrat is the first word of the option chosen.
-* Apps should use the geolocation to map the location of the user. Latitud and altitud will be taken with a precision of the second decimal, which is approximatelly, worth up to 1.1 km.
+* Apps should use the geolocation to map the location of the user. The location will be provided to the smart contract using [geoHash](https://www.movable-type.co.uk/scripts/geohash.html) with an encoding precision of 6 characteres, which provides a square of 1km, preserving privacy.
 * The hash function is SHA-256.
 
 ## 7. Avoidance of duplication of same credentials for same users in different applications
