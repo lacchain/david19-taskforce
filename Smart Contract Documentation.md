@@ -67,7 +67,7 @@ Which handles sex of a citizen.
 **CovidMetadata**
 ```
 struct CovidMetadata {
-        bytes32 id;
+        bytes32 subjectId;
         uint startDate;
         uint iat;
         uint exp;
@@ -116,18 +116,16 @@ This function will be executed by the organizations that have previously been as
 
 This function register a new covid credential and metadata from a whitelisted address. 
 
-* hash: this parameter is the hash of some fields in the verifiable credentials that are common to all the apps. These are the ones that go from "givenName" to "startDate". Check the [Verifiable Credential](https://github.com/lacchain/DAVID19-taskforce/tree/master/verifiableCredentials) structures proposed.
-
-To generate the hash we take all the fields of the credentialSubject:
+* hash: this parameter is the hash of some fields in the verifiable credentials that are common to all the apps. These are the ones that go from "givenName" to "startDate". Check the [Verifiable Credential](https://github.com/lacchain/DAVID19-taskforce/tree/master/verifiableCredentials) structures proposed. In order to do so, to generate the hash we take all the fields of the credentialSubject:
 
 ```json
 "credentialSubject": {
       "id": "did:12345",
-      "givenName": "ADRIAN",
-      "familyName": ["PAREJA", "ABARCA"],
-      "nickName": "CCAMALEON",
+      "givenName": "Adria",
+      "familyName": ["Pareja", "Abarca"],
+      "nickName": "ccamaleon",
       "sameAs": "urn:pe:dni:23434343",
-      "sex":"MALE",
+      "sex":"Male",
       "birthDate": "YYYY", // Year only is enough since we want the age
       "confinement": {
         "geo": {
