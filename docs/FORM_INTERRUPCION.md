@@ -23,7 +23,7 @@ Declaro que mi desplazamiento está relacionado con la actividad necesaria y de 
 * Asistencia a centro, servicio o establecimiento sanitario.  
 * Desplazamiento al puesto de trabajo para efectuar la prestación laboral, profesional o empresarial autorizada.  
 * Retorno al lugar de residencia habitual.  
-* Asistencia o atención a personas ancianas, menores de edad, dependientes, personas con discapacidad o personas especialmente vulnerables.  
+* Atencion o asistencia a personas ancianas, menores de edad, dependientes, personas con discapacidad o personas especialmente vulnerables.  
 * Imprescindible desplazamiento a entidad financiera o de seguro.  
 * Causa de fuerza mayor o situación de necesidad. 
 
