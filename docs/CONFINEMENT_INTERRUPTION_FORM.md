@@ -15,13 +15,16 @@
 Transportation date*
 
 I declare that my displacement is related with first necessity and the necessary activity that I following express:
-* Purchase of food, pharmaceutical, and first necessity products 
-* Attendance to a health center, service, or institution 
-* Commuting to work premise to render professional or enterprise tasks 
-* Return to residence or home 
-* Assist or attend elder, minors of age, handicapped, or vulnerable people 
-* Essential commuting to a financial or insurance entity 
-* Necessity situation or reasons of force majeure 
+
+*	My fridge is empty! I'm going on an expedition to the supermarket.
+* Work, Work, Work. I'm going out to work.
+* We must be prepared, I need more medicine!
+* I don't feel so good. I'm going to visit my doctor.
+* I missed my family, I'm going back to my first home! 
+* They need me: I have to take care of old people, minors, dependents, people with disabilities or people who are especially vulnerable.
+* I have to go to my bank or insurance company.
+* Force majeure or situation of need.
+* I think my pet needs a walk around the neighborhood...
 
 ## INITIAL LOCATION
 * Geolocation * // (It will only be taken up to the second decimal of longitud and latitud, which is approximately equivalent to 1.1 km)
