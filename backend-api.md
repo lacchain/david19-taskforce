@@ -10,8 +10,8 @@ The CSV format is required for ArcGis client.
 |  type | cluster/point | cluster is an aggregation of a region and point is the raw credential |
 |lat| integer| latitud |
 |long|integer| longitud|
-|countUser|integer| Point:1 - Cluster: count of users by region|
-|countTransaction|integer| Point: 1 - Cluster: count the number of credentials created|
+|usersCount|integer| Point:1 - Cluster: count of users by region|
+|transactionCount|integer| Point: 1 - Cluster: count the number of credentials created|
 |noSymptomsCount| integer| Point: 1/0 -  Cluster: count all the symptoms credential with **no** Symptoms|
 |symptomsCount| integer| Point: 1/0 - Cluster: count one for each credential of Symptoms with at least one symptoms|
 |feverCount|integer| Point: 1/0 - Cluster: count of each fever symptom|
@@ -38,10 +38,10 @@ The CSV format is required for ArcGis client.
 |otherSexCount|integer| Point: 1/0 - Cluster:  count of each other sex type counted|
 |unspecifiedSexCount|integer| Point: 1/0 - Cluster:  count of each unspecified sex type counted|
 |age|integer| Point: age of the user - Cluster: average of ages |
-|form1318Count|integer| Point: 1/0 if the user s in the range - Cluster: count of users in the range of ages |
-|form1930Count|integer| Point: 1/0 if the user s in the range - Cluster: count of users in the range of ages |
-|form3140Count|integer| Point: 1/0 if the user s in the range - Cluster: count of users in the range of ages |
-|form4165Count|integer| Point: 1/0 if the user s in the range - Cluster: count of users in the range of ages |
-|form66Count|integer| Point: 1/0 if the user s in the range - Cluster: count of users in the range of ages |
+|form1318Count|integer| Point: 1/0 if the user is in the range - Cluster: count of users in the range of ages |
+|form1930Count|integer| Point: 1/0 if the user is in the range - Cluster: count of users in the range of ages |
+|form3140Count|integer| Point: 1/0 if the user is in the range - Cluster: count of users in the range of ages |
+|form4165Count|integer| Point: 1/0 if the user is in the range - Cluster: count of users in the range of ages |
+|form66Count|integer| Point: 1/0 if the user is in the range - Cluster: count of users in the range of ages |
 |hash|string| Point: hash of the credential - Cluster: 0 |
 |subjectId|string| Point: the HashId of the user - Cluster: 0|
