@@ -1,11 +1,11 @@
 {
   "contracts": {
     "CovidCredentialRegistry": {
-      "address": "0x48002C8B1FF5C282e3E03cD07f2d874e7E003440",
+      "address": "0x651b0f8f8A221BfE327aF371B676CCC9dE6725Af",
       "constructorCode": "6080604052611a14806100136000396000f3fe",
-      "bodyBytecodeHash": "14ab08c880005b3e77dc0cd28609e557a41876a6a43f9a254ba9ba0f9cac46c1",
-      "localBytecodeHash": "5a9368bff17666a22090fffef821d832c7e058d2f20b4d550cd29e4df12714fd",
-      "deployedBytecodeHash": "5a9368bff17666a22090fffef821d832c7e058d2f20b4d550cd29e4df12714fd",
+      "bodyBytecodeHash": "93e166f8744bb92a59244d1481d3c87f5931614f87ee173953b78b15d6bceecc",
+      "localBytecodeHash": "96b219bc0a4c7bbb2fb9db82f3139729f3da5762daae3e607c3f3fa5dda892d6",
+      "deployedBytecodeHash": "96b219bc0a4c7bbb2fb9db82f3139729f3da5762daae3e607c3f3fa5dda892d6",
       "types": {
         "t_bool": {
           "id": "t_bool",
@@ -50,69 +50,69 @@
           "members": [
             {
               "label": "subjectId",
-              "astId": 701,
+              "astId": 702,
               "type": "t_bytes32",
-              "src": "535:17:6"
+              "src": "494:17:6"
             },
             {
               "label": "startDate",
-              "astId": 703,
+              "astId": 704,
               "type": "t_uint256",
-              "src": "562:14:6"
+              "src": "521:14:6"
             },
             {
               "label": "iat",
-              "astId": 705,
+              "astId": 706,
               "type": "t_uint256",
-              "src": "586:8:6"
+              "src": "545:8:6"
             },
             {
               "label": "exp",
-              "astId": 707,
+              "astId": 708,
               "type": "t_uint256",
-              "src": "604:8:6"
+              "src": "563:8:6"
             },
             {
               "label": "sex",
-              "astId": 709,
+              "astId": 710,
               "type": "t_enum<ICredentialRegistry.Sex>",
-              "src": "622:7:6"
+              "src": "581:7:6"
             },
             {
               "label": "age",
-              "astId": 711,
+              "astId": 712,
               "type": "t_uint8",
-              "src": "639:9:6"
+              "src": "598:9:6"
             },
             {
               "label": "geoHash",
-              "astId": 713,
+              "astId": 714,
               "type": "t_bytes6",
-              "src": "658:14:6"
+              "src": "617:14:6"
             },
             {
               "label": "credentialType",
-              "astId": 715,
+              "astId": 716,
               "type": "t_enum<ICredentialRegistry.CovidCode>",
-              "src": "682:24:6"
+              "src": "641:24:6"
             },
             {
               "label": "reason",
-              "astId": 717,
+              "astId": 718,
               "type": "t_enum<ICredentialRegistry.InterruptionReason>",
-              "src": "716:25:6"
+              "src": "675:25:6"
             },
             {
               "label": "symptoms",
-              "astId": 719,
+              "astId": 720,
               "type": "t_bytes1",
-              "src": "751:13:6"
+              "src": "710:13:6"
             },
             {
               "label": "status",
-              "astId": 721,
+              "astId": 722,
               "type": "t_bool",
-              "src": "774:11:6"
+              "src": "733:11:6"
             }
           ]
         },
@@ -160,13 +160,14 @@
           "label": "ICredentialRegistry.InterruptionReason",
           "members": [
             "None",
-            "Purchase",
-            "AttendanceHealthCenter",
-            "CommutingWork",
-            "ReturnResidence",
-            "AssistPeople",
-            "CommutingFinancial",
-            "ForceMajeure"
+            "Work",
+            "Medicines",
+            "Doctor",
+            "Moving",
+            "Assist",
+            "Financial",
+            "Force",
+            "Pets"
           ]
         },
         "t_bytes1": {
@@ -258,12 +259,12 @@
   },
   "solidityLibs": {},
   "proxies": {
-    "David19/CovidCredentialRegistry": [
+    "david19/CovidCredentialRegistry": [
       {
-        "address": "0x1Fb0C4110D340E246593a88Ac6C0Ecb144B3D476",
+        "address": "0x1829BAfEc987B0E717018c7fc80dBa383777F2a2",
         "version": "1.0.0",
-        "implementation": "0x48002C8B1FF5C282e3E03cD07f2d874e7E003440",
-        "admin": "0x5D068570c4f1B8df655513c237d774CA34D2C77b",
+        "implementation": "0x651b0f8f8A221BfE327aF371B676CCC9dE6725Af",
+        "admin": "0xE6DFaa6969f581a76C493F94E3423cDeB9De1a52",
         "kind": "Upgradeable"
       }
     ]
@@ -271,6 +272,6 @@
   "manifestVersion": "2.2",
   "version": "1.0.0",
   "proxyAdmin": {
-    "address": "0x5D068570c4f1B8df655513c237d774CA34D2C77b"
+    "address": "0xE6DFaa6969f581a76C493F94E3423cDeB9De1a52"
   }
 }

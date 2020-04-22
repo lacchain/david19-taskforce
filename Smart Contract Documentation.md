@@ -160,7 +160,7 @@ For example, the parameters to register a covid credential could be:
 * geoHash: 0x366d63357162 (Hexadecimal value of 6mc5qb)
 * credentialType: CovidCode.Confinement (value:0)
 * reason: InterruptionReason.None (value:0)
-* symptoms: 0x06 "Fever" and "Cough" (value of 0110)
+* symptoms: 0xF0 "Symptoms", "Fever", "Cough", "Breathing issues". (value of 11110000)
 
 The requirements for the credential to be registered are that: 
 
@@ -207,6 +207,6 @@ If you need to upgrade the smart contract then execute the following command.
 
 ## Test the Smart Contract 
 
-Upgradable Smart Contract on Lacchain --> 0x1Fb0C4110D340E246593a88Ac6C0Ecb144B3D476 
+Upgradable Smart Contract on Lacchain --> 0x1829BAfEc987B0E717018c7fc80dBa383777F2a2 
 
 
