@@ -94,7 +94,7 @@ This struct will save metadata related the verifiable credential and the citizen
 
 * credentialType: the CovidCode enum which is detailed above.
 * reason: the InterruptionReason wich is detailed above.
-* symptoms: describe symptoms of a person: "Symptoms", "Fever", "Cough", "Breathing issues", "Lost smell", "Lost taste", "Headache", "Muscle pain", "Sore Throat". These are handled with 8 bits 0=false 1=true.
+* symptoms: describe symptoms of a person: "Symptoms", "Fever", "Cough", "Breathing issues", "Lost smell and taste", "Headache", "Muscle pain", "Sore Throat". These are handled with 8 bits 0=false 1=true.
 * status: The state of the credential. true for valid and false for invalid. 
 
 ### WhiteListedRole
