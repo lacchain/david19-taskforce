@@ -19,15 +19,15 @@ Fecha del desplazamiento *
 
 Declaro que mi desplazamiento está relacionado con la actividad necesaria y de primera necesidad que a continuación expreso: 
  
-●	¡Mi nevera está vacía! Voy a hacer expedición al supermercado por más provisiones.
-●	Work, Work, Work. Salgo a trabajar.
-●	¡Hay que estar preparado, necesito mas medicinas!
-●	No me encuentro muy bien. Voy a visitar a mi doctor.
-●	¡Echaba de menos a mi familia, me mudo de residencia! 
-●	Me necesitan: debo atender a personas ancianas, menores de edad, dependientes, personas con discapacidad o personas especialmente vulnerables.
-●	Tengo que resolver una gestión con mi banco o seguro.
-●	Causa de fuerza mayor o situación de necesidad.
-●	Aquí huele a gato encerrado. Creo que mi mascota necesita un paseo por el vecindario…
+*	¡Mi nevera está vacía! Voy a hacer expedición al supermercado por más provisiones.
+* Work, Work, Work. Salgo a trabajar.
+* ¡Hay que estar preparado, necesito mas medicinas!
+* No me encuentro muy bien. Voy a visitar a mi doctor.
+* ¡Echaba de menos a mi familia, me mudo de residencia! 
+* Me necesitan: debo atender a personas ancianas, menores de edad, dependientes, personas con discapacidad o personas especialmente vulnerables.
+* Tengo que resolver una gestión con mi banco o seguro.
+* Causa de fuerza mayor o situación de necesidad.
+* Aquí huele a gato encerrado. Creo que mi mascota necesita un paseo por el vecindario…
 
 ## DATOS LUGAR DE CONFINAMIENTO 
 
