@@ -11,13 +11,14 @@ interface ICredentialRegistry {
     
     enum InterruptionReason {
         None,
-        Purchase,
-        AttendanceHealthCenter,
-        CommutingWork,
-        ReturnResidence,
-        AssistPeople,
-        CommutingFinancial,
-        ForceMajeure
+        Work,
+        Medicines,
+        Doctor,
+        Moving,
+        Assist,
+        Financial,
+        Force,
+        Pets
     }
     
     enum Sex{
