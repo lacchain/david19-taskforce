@@ -1,6 +1,6 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const privateKey = "<PrivateKey>";
-const privateKeyProvider = new HDWalletProvider(privateKey, "<NODEHOST:RPCPORT>");
+const privateKey = "<PRIVATE-KEY>";
+const privateKeyProvider = new HDWalletProvider(privateKey, "<NODE>");
 
 module.exports = {
   networks: {

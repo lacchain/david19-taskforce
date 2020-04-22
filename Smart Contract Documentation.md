@@ -76,8 +76,9 @@ struct CovidMetadata {
         bytes6 geoHash;
         CovidCode credentialType;
         InterruptionReason reason;
+        byte symptoms;
         bool status;
-}
+    }
 ```
 This struct will save metadata related the verifiable credential and the citizen(user) who register the covid verifiable credential.
 
@@ -92,6 +93,7 @@ This struct will save metadata related the verifiable credential and the citizen
 
 * credentialType: the CovidCode enum which is detailed above.
 * reason: the InterruptionReason wich is detailed above.
+* symptoms: describe symptoms a person: "No symptoms", "Fever","Cough","Breathing issues". These are handled with 4 bits 0=false 1=true.
 * status: The state of the credential. true for valid and false for invalid. 
 
 ### WhiteListedRole
@@ -112,7 +114,7 @@ This function will be executed by the organizations that have previously been as
 
 **Register covid credential**
 
-`function register(bytes32 hash, bytes32 id, uint startDate, uint exp, Sex sex, uint8 age, bytes6 geoHash, CovidCode credentialType, InterruptionReason reason) onlyWhitelisted override external returns(bool)`
+`function register(bytes32 hash, bytes32 id, uint startDate, uint exp, Sex sex, uint8 age, bytes6 geoHash, CovidCode credentialType, InterruptionReason reason, byte symptoms) onlyWhitelisted override external returns(bool)`
 
 This function register a new covid credential and metadata from a whitelisted address. 
 
@@ -157,6 +159,7 @@ For example, the parameters to register a covid credential could be:
 * geoHash: 0x366d63357162 (Hexadecimal value of 6mc5qb)
 * credentialType: CovidCode.Confinement (value:0)
 * reason: InterruptionReason.None (value:0)
+* symptoms: 0x06 "Fever" and "Cough" (value of 0110)
 
 The requirements for the credential to be registered are that: 
 
@@ -203,6 +206,6 @@ If you need to upgrade the smart contract then execute the following command.
 
 ## Test the Smart Contract 
 
-Upgradable Smart Contract on Lacchain --> 0x5224e254B1A6f1b24324d7C8428F3736c385dE26 
+Upgradable Smart Contract on Lacchain --> 0x1Fb0C4110D340E246593a88Ac6C0Ecb144B3D476 
 
 
