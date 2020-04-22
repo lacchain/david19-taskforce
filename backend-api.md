@@ -22,6 +22,7 @@ The CSV format is required for ArcGis client.
 |musclePainCount|integer| Point: 1/0 - Cluster: count of each muscle pain symptom|
 |soreThroatCount|integer|Point: 1/0 - Cluster: count of each sore throat symptom|
 |infectedCount|integer| Point: 1/0 - Cluster: count of each infected credential|
+|recoveryCount|integer| Point: 1/0 - Cluster: count of each recovery credential|
 |confinedCount|integer|Point: 1/0 - Cluster:  count of each confinement credential |
 |confinementInterruptionCount|integer|Point: 1/0 - Cluster:  count of each confinement credential for 24hs since created. After the first 24hs is counted as a confinement credential |
 |purchaseFoodCount|integer|Point: 1/0 - Cluster: count of each interruption of confinement because the person purchased food|
