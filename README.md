@@ -42,8 +42,7 @@ We are proposing that the IDB team will deploy a single smart contract to serve 
 * Identificator/id of the user/citicen (not connected to personal data)
 * Sex
 * Age
-* Location of the person (country, city, and neighborhood)
-* Zip code
+* Location of the person (geoHash with precision 6)
 *	Credential Type (Confinement, Interruption of confinement, Symtoms, Infection, Cure) 
 * Additional information of the credential type (Reason for interrauption confinment, medical center validating infection or cure, ...)
 *	Expiration date 
