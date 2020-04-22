@@ -1,11 +1,11 @@
 {
   "contracts": {
     "CovidCredentialRegistry": {
-      "address": "0x43fC0D0d6d396126085020294611DbbB64811CF3",
-      "constructorCode": "6080604052611890806100136000396000f3fe",
-      "bodyBytecodeHash": "c2d570750ff8d16660dff910c3db4d1a595146cd6a1ebe628ebbe55777871130",
-      "localBytecodeHash": "3735a862469d05787af8641920f2b88ca25feab9802828ec08d698baec570dc9",
-      "deployedBytecodeHash": "3735a862469d05787af8641920f2b88ca25feab9802828ec08d698baec570dc9",
+      "address": "0x48002C8B1FF5C282e3E03cD07f2d874e7E003440",
+      "constructorCode": "6080604052611a14806100136000396000f3fe",
+      "bodyBytecodeHash": "14ab08c880005b3e77dc0cd28609e557a41876a6a43f9a254ba9ba0f9cac46c1",
+      "localBytecodeHash": "5a9368bff17666a22090fffef821d832c7e058d2f20b4d550cd29e4df12714fd",
+      "deployedBytecodeHash": "5a9368bff17666a22090fffef821d832c7e058d2f20b4d550cd29e4df12714fd",
       "types": {
         "t_bool": {
           "id": "t_bool",
@@ -50,63 +50,69 @@
           "members": [
             {
               "label": "subjectId",
-              "astId": 691,
+              "astId": 701,
               "type": "t_bytes32",
               "src": "535:17:6"
             },
             {
               "label": "startDate",
-              "astId": 693,
+              "astId": 703,
               "type": "t_uint256",
               "src": "562:14:6"
             },
             {
               "label": "iat",
-              "astId": 695,
+              "astId": 705,
               "type": "t_uint256",
               "src": "586:8:6"
             },
             {
               "label": "exp",
-              "astId": 697,
+              "astId": 707,
               "type": "t_uint256",
               "src": "604:8:6"
             },
             {
               "label": "sex",
-              "astId": 699,
+              "astId": 709,
               "type": "t_enum<ICredentialRegistry.Sex>",
               "src": "622:7:6"
             },
             {
               "label": "age",
-              "astId": 701,
+              "astId": 711,
               "type": "t_uint8",
               "src": "639:9:6"
             },
             {
               "label": "geoHash",
-              "astId": 703,
+              "astId": 713,
               "type": "t_bytes6",
               "src": "658:14:6"
             },
             {
               "label": "credentialType",
-              "astId": 705,
+              "astId": 715,
               "type": "t_enum<ICredentialRegistry.CovidCode>",
               "src": "682:24:6"
             },
             {
               "label": "reason",
-              "astId": 707,
+              "astId": 717,
               "type": "t_enum<ICredentialRegistry.InterruptionReason>",
               "src": "716:25:6"
             },
             {
+              "label": "symptoms",
+              "astId": 719,
+              "type": "t_bytes1",
+              "src": "751:13:6"
+            },
+            {
               "label": "status",
-              "astId": 709,
+              "astId": 721,
               "type": "t_bool",
-              "src": "751:11:6"
+              "src": "774:11:6"
             }
           ]
         },
@@ -162,6 +168,11 @@
             "CommutingFinancial",
             "ForceMajeure"
           ]
+        },
+        "t_bytes1": {
+          "id": "t_bytes1",
+          "kind": "elementary",
+          "label": "bytes1"
         },
         "t_mapping<t_struct<ICredentialRegistry.CovidMetadata>>": {
           "id": "t_mapping<t_struct<ICredentialRegistry.CovidMetadata>>",
@@ -249,10 +260,10 @@
   "proxies": {
     "David19/CovidCredentialRegistry": [
       {
-        "address": "0x5224e254B1A6f1b24324d7C8428F3736c385dE26",
+        "address": "0x1Fb0C4110D340E246593a88Ac6C0Ecb144B3D476",
         "version": "1.0.0",
-        "implementation": "0x43fC0D0d6d396126085020294611DbbB64811CF3",
-        "admin": "0xD39a9749bE93e956a892CF32059B519d8A770d90",
+        "implementation": "0x48002C8B1FF5C282e3E03cD07f2d874e7E003440",
+        "admin": "0x5D068570c4f1B8df655513c237d774CA34D2C77b",
         "kind": "Upgradeable"
       }
     ]
@@ -260,6 +271,6 @@
   "manifestVersion": "2.2",
   "version": "1.0.0",
   "proxyAdmin": {
-    "address": "0xD39a9749bE93e956a892CF32059B519d8A770d90"
+    "address": "0x5D068570c4f1B8df655513c237d774CA34D2C77b"
   }
 }
