@@ -42,13 +42,14 @@ which handles the different types of covid credentials.
 ```
 enum InterruptionReason {
         None,
-        Purchase,
-        AttendanceHealthCenter,
-        CommutingWork,
-        ReturnResidence,
-        AssistPeople,
-        CommutingFinancial,
-        ForceMajeure
+        Work,
+        Medicines,
+        Doctor,
+        Moving,
+        Assist,
+        Financial,
+        Force,
+        Pets
 }
 ```
 Which handles reasons for a [confinement interruption form](https://github.com/lacchain/DAVID19-taskforce/tree/master/docs).
