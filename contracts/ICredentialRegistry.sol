@@ -10,7 +10,7 @@ interface ICredentialRegistry {
     }
     
     enum InterruptionReason {
-        None,
+        Food,
         Work,
         Medicines,
         Doctor,
@@ -18,7 +18,8 @@ interface ICredentialRegistry {
         Assist,
         Financial,
         Force,
-        Pets
+        Pets, 
+        Other
     }
     
     enum Sex{

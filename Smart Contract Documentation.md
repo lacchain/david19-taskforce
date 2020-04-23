@@ -208,6 +208,6 @@ If you need to upgrade the smart contract then execute the following command.
 
 ## Test the Smart Contract 
 
-Upgradable Smart Contract on Lacchain --> 0x1829BAfEc987B0E717018c7fc80dBa383777F2a2 
+Upgradable Smart Contract on Lacchain --> 0x13Bf54153c34555205D009e492FD725D42287e99 
 
 
