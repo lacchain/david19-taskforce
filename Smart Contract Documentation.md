@@ -41,7 +41,7 @@ which handles the different types of covid credentials.
 **InterruptionReason**
 ```
 enum InterruptionReason {
-        None,
+        Food,
         Work,
         Medicines,
         Doctor,
@@ -49,7 +49,8 @@ enum InterruptionReason {
         Assist,
         Financial,
         Force,
-        Pets
+        Pets, 
+        Other
 }
 ```
 Which handles reasons for a [confinement interruption form](https://github.com/lacchain/DAVID19-taskforce/tree/master/docs).
