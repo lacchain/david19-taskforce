@@ -12,6 +12,7 @@ The CSV format is required for ArcGis client.
 |long|integer| longitud|
 |usersCount|integer| Point:1 - Cluster: count of users by region|
 |transactionCount|integer| Point: 1 - Cluster: count the number of credentials created|
+|healthyCount|integer| Point: 1/0 - Cluster: count the healthy subjects. Is the number of credentials with no symptoms that subject is not infected or recovered|
 |noSymptomsCount| integer| Point: 1/0 -  Cluster: count all the symptoms credential with **no** Symptoms|
 |symptomsCount| integer| Point: 1/0 - Cluster: count one for each credential of Symptoms with at least one symptoms|
 |feverCount|integer| Point: 1/0 - Cluster: count of each fever symptom|
