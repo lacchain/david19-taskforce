@@ -1,4 +1,6 @@
-## Casos de uso
+# CREDENCIALES VERIFICABLES EMITIDAS POR ENTIDADES AUTORIZADAS
+
+## CASOS DE USO
 
 ### Identidad corporativa – Badge
 
@@ -135,7 +137,7 @@ Token de lavarse las manos
 
 Token de tomarse la temperatura
 
-### Servicios
+## SERVICIOS
 
 Billetera
 	
