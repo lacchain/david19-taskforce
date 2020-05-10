@@ -209,6 +209,6 @@ If you need to upgrade the smart contract then execute the following command.
 ## Test the Smart Contract 
 
 Upgradable Smart Contract on Lacchain --> 0x13Bf54153c34555205D009e492FD725D42287e99 
-Upgradable Smart Contract on Covid-Network --> 0xE2Aa96695EF268eCbf693d5ab276D5CBEA2A2251
+ONLY TEST - Upgradable Smart Contract on Covid-Network - TEST --> 0xE2Aa96695EF268eCbf693d5ab276D5CBEA2A2251
 
-
+PRODUCTION on Covid-Network --> 0x06c87D3D3881b3a802B392913A3C451dC3da6ed0
