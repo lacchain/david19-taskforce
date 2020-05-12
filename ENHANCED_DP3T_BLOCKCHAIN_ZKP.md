@@ -11,7 +11,7 @@ In the past months we have seen different solutions to fight the spread of the C
 
 All of these solutions have in common many things:
 
-The use of Bluetooth technology as the most precise way of contact tracing, as an opposition to the GPS.  
+* The use of Bluetooth technology as the most precise way of contact tracing, as an opposition to the GPS.  
 
 * A government and/or a health institution behind it.
 
