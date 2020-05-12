@@ -65,21 +65,39 @@ b.	A proof that they have been in touch with the person they are reaching out to
 
 Steps number 5 and 6 are not trivial and they require further explanation. We break them down in the next sections.
 
-## Peer-to-peer communication 
-
-A blockchain-based approach (using Ethereum technology) is the [whisper protocol]( https://github.com/ethereum/wiki/wiki/Whisper). This allows peer-to-peer communication between Dapps. A second approach could be using a smart contract as the endpoint. The sender could send the information there encripted with the recipient´s public keys.
-
-As endpoints are public, we need to ensure that nobody is spammed with millions of trash messages to his/her endpoint. This can be done by requiring a proof of work in order to be able to send a message to an individual’s endpoint.
-
-[This scenarios requiere non-interactive zero-knowledge proofs as there is not a bi-directional communication between the two peers, only one-directional message]
-
-
 ## Zero knowledge proofs
 
 The first zero-knowledge proof requires Alice to proof to Bob that she has been tested positive by a trusted entity. The trusted entity registered (in step 4) the hash of the verifiable credential issued to Alice in the public smart contract, with its status. Only Alice has that verifiable credential, so all Alice needs to do is proving that she has the payload of that hash without showing it. This problem can be put as “proving knowledge of a hash pre-image” and is a [solved problem]( https://blog.decentriq.ch/proving-hash-pre-image-zksnarks-zokrates/
 ).
 
 The second proof requires Alice to proof Bob that she has been in contact with him without revealing her pseudonymous identifier. In order to do so, Alice can tell Bob the time and place where they were in contact, but reducing the precision of this information (a more range of time and place generated with the original plus a certain random error). With this we intend Alice to be able to prove Bob with enough degree of confidence that she knew were he was, which she could know because she was also there, but at the same time not revealing who of all the people that was also there she was. So the more crowded the area where Bob was at that time, the broader the list of candidates he can make to meet Alice information. [This second proof in not a zero-knowledge proof, according to the definition of these. In the case that Bob was not close to any other people at the time he contacted Alice, he could know who Alice’s pseudonymous identifier is (in the case that Bob is a tech-savvy that can check the back-end of his mobile app’s database) and therefore, if Bob can discover Alice’s identity behind that identifier, Bob will know that the real identity of Alice is infected. However, we believe that only in the cases where Bob and Alice are well-known people that spend time alone this will happen. In those cases, Bob would probable get to know directly from Alice that she is infected. However, alternatives to this proof are welcome.]
+
+## Peer-to-peer communication 
+
+We create a central smart contract maintained by the health authority where the tested-positive individual, let's say Bob, registers the zero-knowledge proofs he wants to send to the people he has been in contact with. This smart contract is indicated as the endpoint of the EphIDs. He would do it this way:
+
+1. He calls a function of the smart contract to generate a transaction.
+
+2. The smart contract challenges him to zero knowledge proof that he owns a verifiable credential issued by an authorized health institution confirming his positive test (in order to avoid undesired individuals sending spam to the smart contract).
+
+3. Bob sends as many transactions as people he has been in touch with, each of them encrypted with the public key associated to the EphID of these individuals. The transactions have three sets of information. 
+
+  3.a. The EphID of the person he is sending to message to.
+  
+  3.b. The zero-knowledge proof that he has been tested positive by an authorized health institution. (As the smart contract has already checked this in order to let Bob register the transaction, this would not be necessary. However, this redundance in the verification does not harm).
+  
+  3.c. The proof hat he has been in contact with the individual he is sending the message to.
+  
+4. Each user of the mobile app will be either suscribed to events in the contract or checking it periodically. Each time the mobile app sees a new transaction, it tries to decrypt it with its private keys. If the message was destinated to belong to him/her, then the first set of information (3.a.) is one of his/her EphID. If that is the result, then it procees to read sets 3.b. and 3.c. sets of information and verify that indeed the sender of the message has been in touch with him or her.
+
+Important consideration:
+
+Alice do not write in the smart contract with the EphID that she has been using to interact with others or any public keys related to it. A new blockchain account is created in Alice's wallet in order to send those messages to the smart contract.
+
+This approach requieres non-interactive zero-knowledge proofs as there is not a bi-directional communication between the two peers, only one-directional messages.
+
+In terms of scalability, for a region or country with a one thousand of postives a day, and assuming a thousand of risky contacts in the past (at least) two weeks, that is a million of transactions per day. Taken to transactions per second, it is 11.6 tps. Blockchain networks today support from hundreds to thousands per second.
+
 
 ---
 
