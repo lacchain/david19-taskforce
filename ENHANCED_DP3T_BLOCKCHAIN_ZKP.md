@@ -71,9 +71,11 @@ Steps number 5 and 6 are not trivial and they require further explanation. We br
 
 There are different ways to achieve peer-to-peer between individuals.
 
-Endpoints could be simple URLs. A blockchain-based approach (using Ethereum technology) is the [whisper protocol]( https://github.com/ethereum/wiki/wiki/Whisper). This allows peer-to-peer communication between Dapps.
+Endpoints could be simple URLs. A blockchain-based approach (using Ethereum technology) is the [whisper protocol]( https://github.com/ethereum/wiki/wiki/Whisper). This allows peer-to-peer communication between Dapps. A third approach could be using a smart contract as the endpoint. The sender could send the information there encripted with the recipient´s public keys.
 
 As endpoints are public, we need to ensure that nobody is spammed with millions of trash messages to his/her endpoint. This can be done by requiring a proof of work in order to be able to send a message to an individual’s endpoint.
+
+[This scenarios requiere non-interactive zero-knowledge proofs as there is not a bi-directional communication between the two peers, only one-directional message]
 
 
 ## Zero knowledge proofs
