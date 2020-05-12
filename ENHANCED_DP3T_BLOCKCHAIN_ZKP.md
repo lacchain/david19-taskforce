@@ -46,7 +46,7 @@ The central entity behind the solution that controls the back-end/server generat
 
 ## Full decentralized contact tracing using blockchain and zero-knowledge proofs 
 
-We believe that replacing the central back-end/server by a decentralized immutable and trusted network can help solve most of the privacy issues presented in the DP-3T approach and pointed out by its development team. Additionally, adding zero-knowledge proofs to the peer-to-peer communication between mobile apps when notifying infection can also contribute to reduce the identification of infected people. This solution is intended to allow:
+We believe that replacing the central back-end/server by a decentralized immutable and trusted network can help solve most of the privacy issues presented in the DP-3T approach and pointed out by its development team. Additionally, adding zero-knowledge proofs to the peer-to-peer communication between mobile apps when notifying infection can also contribute to reduce the discovery of the real identities of infected people. This solution is intended to allow:
 
 * Alice to notify Bob that she has been tested positive directly (in a peer-to-peer way), without no intermediary central back-end/server
 * Alice to prove Bob that she has been tested positive by a trusted health institution without revealing ANY information about it (the institution, the place, the timestamp, …)
