@@ -87,4 +87,4 @@ The second proof requires Alice to proof Bob that she has been in contact with h
 
 ---
 
-***Thanks to Adrian Pareja, Diego Leon, Antonio Leal, and David Ammouial for their insights.***
+***Thanks to Ruben Cessa, Adrian Pareja, Diego Leon, Antonio Leal, Sergio Ceron, and David Ammouial for their insights.***
