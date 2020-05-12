@@ -59,9 +59,7 @@ The solution is as follows:
 3.	Using the Bluetooth technology well described in all the previously mentioned proposals, every individual records in their mobile apps the information about which identifiers have they been in touch with and at what time (the timestamps).
 4.	Every time an individual is tested positive by a health institution, this institution generates a verifiable credential (following the W3C standard Verifiable Credentials (VCs)) digitally signed and sends it to the individual. At the same time, this entity registers the hash of this credential in a public smart contract that this entity controls (only it has permissions to write on it) together with the timestamp and the status of the credential (so if this institution revokes it, the hash will be shown in the smart contract with status revoked).
 5.	When an individual receives this credential of positive test, it automatically reaches out to all the individuals it has been in contact with for the past (at least) two weeks. In order to do so, the mobile app retrieves all the EphIDs registered in the local database it has been in touched with, goes to the blockchain, and resolves their endpoints.
-6.	In order for a tested-positive person to notify he or she 
-
-7.	these other individuals that they have been in touch with a positive tested individual but without disclosing who did the tests or what is the pseudonymous so privacy can be fully preserved, the infected individual sends two zero-knowledge-proofs:
+6.	In order for a tested-positive person to notify those who have been in contact with her/him but without disclosing who tested her/him or what is her/him pseudonymous so privacy can be fully preserved, the infected individual sends two zero-knowledge-proofs:
 a.	A proof that they have a credential signed by a trusted authorized health institution.
 b.	A proof that they have been in touch with the person they are reaching out to.
 
