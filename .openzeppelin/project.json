@@ -1,7 +1,8 @@
 {
   "manifestVersion": "2.2",
   "contracts": {
-    "CovidCredentialRegistry": "CovidCredentialRegistry"
+    "CovidCredentialRegistry": "CovidCredentialRegistry",
+    "PointsRegistry": "PointsRegistry"
   },
   "dependencies": {},
   "name": "David19",

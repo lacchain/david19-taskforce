@@ -40,7 +40,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 30,
-        "sourceUnit": 437,
+        "sourceUnit": 624,
         "src": "25:60:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -54,10 +54,10 @@
               "id": 3,
               "name": "Initializable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 436,
+              "referencedDeclaration": 623,
               "src": "607:13:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Initializable_$436",
+                "typeIdentifier": "t_contract$_Initializable_$623",
                 "typeString": "contract Initializable"
               }
             },
@@ -67,7 +67,7 @@
           }
         ],
         "contractDependencies": [
-          436
+          623
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -75,7 +75,7 @@
         "id": 29,
         "linearizedBaseContracts": [
           29,
-          436
+          623
         ],
         "name": "Context",
         "nodeType": "ContractDefinition",
@@ -127,7 +127,7 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 813,
+                      "referencedDeclaration": 1138,
                       "src": "946:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
@@ -221,7 +221,7 @@
                     "name": "this",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 829,
+                    "referencedDeclaration": 1154,
                     "src": "1036:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_Context_$29",
@@ -241,7 +241,7 @@
                       "name": "msg",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 813,
+                      "referencedDeclaration": 1138,
                       "src": "1176:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_message",
