@@ -433,6 +433,13 @@
         "implementation": "0x312a4F8523d79209d73832806d1E111A836cDbf7",
         "admin": "0x5ABB3005D8EdA6eaeaF14D4Af1c3Bb777bf6Aa55",
         "kind": "Upgradeable"
+      },
+      {
+        "address": "0x109c901F9a29FfA6b34efCdcF3388841D22Ca553",
+        "version": "1.0.0",
+        "implementation": "0x312a4F8523d79209d73832806d1E111A836cDbf7",
+        "admin": "0x5ABB3005D8EdA6eaeaF14D4Af1c3Bb777bf6Aa55",
+        "kind": "Upgradeable"
       }
     ]
   },
