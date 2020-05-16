@@ -209,6 +209,7 @@ If you need to upgrade the smart contract then execute the following command.
 ## Test the Smart Contract 
 
 Upgradable Smart Contract on Lacchain --> 0x13Bf54153c34555205D009e492FD725D42287e99 
-ONLY TEST - Upgradable Smart Contract on Covid-Network - TEST --> 0xE2Aa96695EF268eCbf693d5ab276D5CBEA2A2251
+ONLY TEST - Upgradable Credentials Registry Smart Contract on Covid-Network - TEST --> 0xE2Aa96695EF268eCbf693d5ab276D5CBEA2A2251
+          - Upgradable Points Smart Contract on Covid-Network - TEST --> 0x8cED8E12299b4CCB4b007ee9Cc3233CB5755b770
 
-PRODUCTION on Covid-Network --> 0x06c87D3D3881b3a802B392913A3C451dC3da6ed0
+PRODUCTION Credentials Registry on Covid-Network --> 0x06c87D3D3881b3a802B392913A3C451dC3da6ed0

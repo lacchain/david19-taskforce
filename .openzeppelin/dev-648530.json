@@ -256,6 +256,130 @@
         "hasInitialValuesInDeclarations": false,
         "uninitializedBaseContracts": []
       }
+    },
+    "PointsRegistry": {
+      "address": "0x2a4a7f7fA24b370c0d286a81425CCB21D676aB44",
+      "constructorCode": "608060405261102a806100136000396000f3fe",
+      "bodyBytecodeHash": "b8c9abffb684946ca3565d57a0e5c0ec35ec521d93218a73088d7a15c8ff1b61",
+      "localBytecodeHash": "8b5aa66fed53c16c35019c88810d72b58e08574f10fcc11726be43567b2d27a7",
+      "deployedBytecodeHash": "8b5aa66fed53c16c35019c88810d72b58e08574f10fcc11726be43567b2d27a7",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_struct<Roles.Role>": {
+          "id": "t_struct<Roles.Role>",
+          "kind": "struct",
+          "label": "Roles.Role",
+          "members": [
+            {
+              "label": "bearer",
+              "astId": 35,
+              "type": "t_mapping<t_bool>",
+              "src": "150:32:1"
+            }
+          ]
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        },
+        "t_mapping<t_uint256>": {
+          "id": "t_mapping<t_uint256>",
+          "valueType": "t_uint256",
+          "label": "mapping(key => uint256)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 558,
+          "type": "t_bool",
+          "src": "757:24:5"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 560,
+          "type": "t_bool",
+          "src": "876:25:5"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 622,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:5"
+        },
+        {
+          "contract": "WhitelistAdminRole",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/access/roles/WhitelistAdminRole.sol",
+          "label": "_whitelistAdmins",
+          "astId": 132,
+          "type": "t_struct<Roles.Role>",
+          "src": "477:35:2"
+        },
+        {
+          "contract": "WhitelistAdminRole",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/access/roles/WhitelistAdminRole.sol",
+          "label": "______gap",
+          "astId": 232,
+          "type": "t_array:50<t_uint256>",
+          "src": "1503:29:2"
+        },
+        {
+          "contract": "WhitelistedRole",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/access/roles/WhitelistedRole.sol",
+          "label": "_whitelisteds",
+          "astId": 258,
+          "type": "t_struct<Roles.Role>",
+          "src": "709:32:3"
+        },
+        {
+          "contract": "WhitelistedRole",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/access/roles/WhitelistedRole.sol",
+          "label": "______gap",
+          "astId": 366,
+          "type": "t_array:50<t_uint256>",
+          "src": "1760:29:3"
+        },
+        {
+          "contract": "PointsRegistry",
+          "path": "contracts/PointsRegistry.sol",
+          "label": "_points",
+          "astId": 1045,
+          "type": "t_mapping<t_uint256>",
+          "src": "331:36:9"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
     }
   },
   "solidityLibs": {},
@@ -272,6 +396,15 @@
         "address": "0x06c87D3D3881b3a802B392913A3C451dC3da6ed0",
         "version": "1.0.0",
         "implementation": "0xa4B5eE2906090ce2cDbf5dfff944db26f397037D",
+        "admin": "0x5ABB3005D8EdA6eaeaF14D4Af1c3Bb777bf6Aa55",
+        "kind": "Upgradeable"
+      }
+    ],
+    "David19/PointsRegistry": [
+      {
+        "address": "0x8cED8E12299b4CCB4b007ee9Cc3233CB5755b770",
+        "version": "1.0.0",
+        "implementation": "0x2a4a7f7fA24b370c0d286a81425CCB21D676aB44",
         "admin": "0x5ABB3005D8EdA6eaeaF14D4Af1c3Bb777bf6Aa55",
         "kind": "Upgradeable"
       }
