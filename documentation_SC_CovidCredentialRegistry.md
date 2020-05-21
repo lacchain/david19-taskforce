@@ -1,4 +1,4 @@
-# Smart Contract Documentation
+# Documentation of the smart contract for credential registration
 
 This document aims to provide documentation for smart contract [CovidCredentialRegistry](https://github.com/lacchain/DAVID19-taskforce/blob/master/contracts/CovidCredentialRegistry.sol).
 
