@@ -1,0 +1,1344 @@
+{
+  "fileName": "LevelPointsRegistry.sol",
+  "contractName": "LevelPointsRegistry",
+  "source": "pragma solidity ^0.5.0;\n\nimport \"@openzeppelin/contracts-ethereum-package/contracts/access/roles/WhitelistedRole.sol\";\nimport \"./ILevelPointsRegistry.sol\";\n\ncontract LevelPointsRegistry is ILevelPointsRegistry, WhitelistedRole {\n\n  mapping (bytes32 => Citizen) _points;\n\n  function setPoints(bytes32 subjectId, uint256 amount, Level level) onlyWhitelisted external returns(bool) {\n    Citizen storage citizen = _points[subjectId];\n\n    citizen.points = amount;  \n    citizen.level = level;\n    _points[subjectId] = citizen;\n\n    emit PointsSet(subjectId, msg.sender, amount, level);\n    return true;\n  }\n  \n  function balanceOf(bytes32 subjectId) external view returns(uint256){\n    return _points[subjectId].points;\n  }\n  \n  function levelOf(bytes32 subjectId) external view returns(Level){\n    return _points[subjectId].level;    \n  }\n  \n}\n",
+  "sourcePath": "contracts/LevelPointsRegistry.sol",
+  "sourceMap": "157:684:9:-;;;;;;;;;",
+  "deployedSourceMap": "157:684:9:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;157:684:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1145:108:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1145:108:3;;;;;;;;;;;;;;;;;;;:::i;:::-;;726:110:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;726:110:9;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1259:114:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1259:114:3;;;;;;;;;;;;;;;;;;;:::i;:::-;;273:330:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;273:330:9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1022:117:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1022:117:3;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;1098:93:2;;;:::i;:::-;;609:111:9;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;609:111:9;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;978:114:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;978:114:2;;;;;;;;;;;;;;;;;;;:::i;:::-;;849:123;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;849:123:2;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;907:109:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;907:109:3;;;;;;;;;;;;;;;;;;;:::i;:::-;;1379:87;;;:::i;:::-;;1145:108;726:30:2;743:12;:10;:12::i;:::-;726:16;:30::i;:::-;718:107;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1222:24:3;1238:7;1222:15;:24::i;:::-;1145:108;:::o;726:110:9:-;784:5;803:7;:18;811:9;803:18;;;;;;;;;;;:24;;;;;;;;;;;;796:31;;726:110;;;:::o;1259:114:3:-;726:30:2;743:12;:10;:12::i;:::-;726:16;:30::i;:::-;718:107;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1339:27:3;1358:7;1339:18;:27::i;:::-;1259:114;:::o;273:330:9:-;373:4;793:27:3;807:12;:10;:12::i;:::-;793:13;:27::i;:::-;785:98;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;385:23:9;411:7;:18;419:9;411:18;;;;;;;;;;;385:44;;453:6;436:7;:14;;:23;;;;483:5;467:7;:13;;;:21;;;;;;;;;;;;;;;;;;;;;;;;515:7;494;:18;502:9;494:18;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;544:9;534:47;555:10;567:6;575:5;534:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;594:4;587:11;;;273:330;;;;;:::o;1022:117:3:-;1083:4;1106:26;1124:7;1106:13;:17;;:26;;;;:::i;:::-;1099:33;;1022:117;;;:::o;1098:93:2:-;1149:35;1171:12;:10;:12::i;:::-;1149:21;:35::i;:::-;1098:93::o;609:111:9:-;669:7;690;:18;698:9;690:18;;;;;;;;;;;:25;;;683:32;;609:111;;;:::o;978:114:2:-;726:30;743:12;:10;:12::i;:::-;726:16;:30::i;:::-;718:107;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1058:27;1077:7;1058:18;:27::i;:::-;978:114;:::o;849:123::-;913:4;936:29;957:7;936:16;:20;;:29;;;;:::i;:::-;929:36;;849:123;;;:::o;907:109:3:-;1024:12:4;;;;;;;;;;;:31;;;;1040:15;:13;:15::i;:::-;1024:31;:47;;;;1060:11;;;;;;;;;;;1059:12;1024:47;1016:106;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1129:19;1152:12;;;;;;;;;;;1151:13;1129:35;;1174:14;1170:80;;;1213:4;1198:12;;:19;;;;;;;;;;;;;;;;;;1239:4;1225:11;;:18;;;;;;;;;;;;;;;;;;1170:80;972:37:3;1002:6;972:29;:37::i;:::-;1268:14:4;1264:55;;;1307:5;1292:12;;:20;;;;;;;;;;;;;;;;;;1264:55;907:109:3;;:::o;1379:87::-;1427:32;1446:12;:10;:12::i;:::-;1427:18;:32::i;:::-;1379:87::o;867:96:0:-;912:15;946:10;939:17;;867:96;:::o;1472:134:3:-;1533:26;1551:7;1533:13;:17;;:26;;;;:::i;:::-;1591:7;1574:25;;;;;;;;;;;;1472:134;:::o;1612:142::-;1676:29;1697:7;1676:13;:20;;:29;;;;:::i;:::-;1739:7;1720:27;;;;;;;;;;;;1612:142;:::o;779:200:1:-;851:4;894:1;875:21;;:7;:21;;;;867:68;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;952:4;:11;;:20;964:7;952:20;;;;;;;;;;;;;;;;;;;;;;;;;945:27;;779:200;;;;:::o;1346:151:2:-;1413:32;1437:7;1413:16;:23;;:32;;;;:::i;:::-;1482:7;1460:30;;;;;;;;;;;;1346:151;:::o;1197:143::-;1261:29;1282:7;1261:16;:20;;:29;;;;:::i;:::-;1325:7;1305:28;;;;;;;;;;;;1197:143;:::o;1409:498:4:-;1456:4;1797:12;1820:4;1797:28;;1831:10;1876:4;1864:17;1858:23;;1901:1;1895:2;:7;1888:14;;;;1409:498;:::o;519:153:2:-;1024:12:4;;;;;;;;;;;:31;;;;1040:15;:13;:15::i;:::-;1024:31;:47;;;;1060:11;;;;;;;;;;;1059:12;1024:47;1016:106;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1129:19;1152:12;;;;;;;;;;;1151:13;1129:35;;1174:14;1170:80;;;1213:4;1198:12;;:19;;;;;;;;;;;;;;;;;;1239:4;1225:11;;:18;;;;;;;;;;;;;;;;;;1170:80;589:24:2;606:6;589:16;:24::i;:::-;584:82;;629:26;648:6;629:18;:26::i;:::-;584:82;1268:14:4;1264:55;;;1307:5;1292:12;;:20;;;;;;;;;;;;;;;;;;1264:55;519:153:2;;:::o;260:175:1:-;337:18;341:4;347:7;337:3;:18::i;:::-;336:19;328:63;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;424:4;401;:11;;:20;413:7;401:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;260:175;;:::o;510:180::-;589:18;593:4;599:7;589:3;:18::i;:::-;581:64;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;678:5;655:4;:11;;:20;667:7;655:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;510:180;;:::o",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "subjectId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum ILevelPointsRegistry.Level",
+          "name": "level",
+          "type": "uint8"
+        }
+      ],
+      "name": "PointsSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "WhitelistAdminAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "WhitelistAdminRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "WhitelistedAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "WhitelistedRemoved",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "addWhitelistAdmin",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "addWhitelisted",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "subjectId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "isWhitelistAdmin",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "isWhitelisted",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "subjectId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "levelOf",
+      "outputs": [
+        {
+          "internalType": "enum ILevelPointsRegistry.Level",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "removeWhitelisted",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceWhitelistAdmin",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceWhitelisted",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "subjectId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "enum ILevelPointsRegistry.Level",
+          "name": "level",
+          "type": "uint8"
+        }
+      ],
+      "name": "setPoints",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "contracts/LevelPointsRegistry.sol",
+    "exportedSymbols": {
+      "LevelPointsRegistry": [
+        962
+      ]
+    },
+    "id": 963,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 877,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:9"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts-ethereum-package/contracts/access/roles/WhitelistedRole.sol",
+        "file": "@openzeppelin/contracts-ethereum-package/contracts/access/roles/WhitelistedRole.sol",
+        "id": 878,
+        "nodeType": "ImportDirective",
+        "scope": 963,
+        "sourceUnit": 368,
+        "src": "25:93:9",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "contracts/ILevelPointsRegistry.sol",
+        "file": "./ILevelPointsRegistry.sol",
+        "id": 879,
+        "nodeType": "ImportDirective",
+        "scope": 963,
+        "sourceUnit": 849,
+        "src": "119:36:9",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 880,
+              "name": "ILevelPointsRegistry",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 848,
+              "src": "189:20:9",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ILevelPointsRegistry_$848",
+                "typeString": "contract ILevelPointsRegistry"
+              }
+            },
+            "id": 881,
+            "nodeType": "InheritanceSpecifier",
+            "src": "189:20:9"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 882,
+              "name": "WhitelistedRole",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 367,
+              "src": "211:15:9",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_WhitelistedRole_$367",
+                "typeString": "contract WhitelistedRole"
+              }
+            },
+            "id": 883,
+            "nodeType": "InheritanceSpecifier",
+            "src": "211:15:9"
+          }
+        ],
+        "contractDependencies": [
+          29,
+          233,
+          367,
+          436,
+          848
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 962,
+        "linearizedBaseContracts": [
+          962,
+          367,
+          233,
+          29,
+          436,
+          848
+        ],
+        "name": "LevelPointsRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 887,
+            "name": "_points",
+            "nodeType": "VariableDeclaration",
+            "scope": 962,
+            "src": "232:36:9",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Citizen_$812_storage_$",
+              "typeString": "mapping(bytes32 => struct ILevelPointsRegistry.Citizen)"
+            },
+            "typeName": {
+              "id": 886,
+              "keyType": {
+                "id": 884,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "241:7:9",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "232:28:9",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Citizen_$812_storage_$",
+                "typeString": "mapping(bytes32 => struct ILevelPointsRegistry.Citizen)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 885,
+                "name": "Citizen",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 812,
+                "src": "252:7:9",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Citizen_$812_storage_ptr",
+                  "typeString": "struct ILevelPointsRegistry.Citizen"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 934,
+              "nodeType": "Block",
+              "src": "379:224:9",
+              "statements": [
+                {
+                  "assignments": [
+                    901
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 901,
+                      "name": "citizen",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 934,
+                      "src": "385:23:9",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Citizen_$812_storage_ptr",
+                        "typeString": "struct ILevelPointsRegistry.Citizen"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 900,
+                        "name": "Citizen",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 812,
+                        "src": "385:7:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Citizen_$812_storage_ptr",
+                          "typeString": "struct ILevelPointsRegistry.Citizen"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 905,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 902,
+                      "name": "_points",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 887,
+                      "src": "411:7:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Citizen_$812_storage_$",
+                        "typeString": "mapping(bytes32 => struct ILevelPointsRegistry.Citizen storage ref)"
+                      }
+                    },
+                    "id": 904,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 903,
+                      "name": "subjectId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 889,
+                      "src": "419:9:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "411:18:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Citizen_$812_storage",
+                      "typeString": "struct ILevelPointsRegistry.Citizen storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "385:44:9"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 910,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 906,
+                        "name": "citizen",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 901,
+                        "src": "436:7:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Citizen_$812_storage_ptr",
+                          "typeString": "struct ILevelPointsRegistry.Citizen storage pointer"
+                        }
+                      },
+                      "id": 908,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "points",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 809,
+                      "src": "436:14:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 909,
+                      "name": "amount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 891,
+                      "src": "453:6:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "436:23:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 911,
+                  "nodeType": "ExpressionStatement",
+                  "src": "436:23:9"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 916,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 912,
+                        "name": "citizen",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 901,
+                        "src": "467:7:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Citizen_$812_storage_ptr",
+                          "typeString": "struct ILevelPointsRegistry.Citizen storage pointer"
+                        }
+                      },
+                      "id": 914,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "level",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 811,
+                      "src": "467:13:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Level_$807",
+                        "typeString": "enum ILevelPointsRegistry.Level"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 915,
+                      "name": "level",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 893,
+                      "src": "483:5:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Level_$807",
+                        "typeString": "enum ILevelPointsRegistry.Level"
+                      }
+                    },
+                    "src": "467:21:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Level_$807",
+                      "typeString": "enum ILevelPointsRegistry.Level"
+                    }
+                  },
+                  "id": 917,
+                  "nodeType": "ExpressionStatement",
+                  "src": "467:21:9"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 922,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 918,
+                        "name": "_points",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 887,
+                        "src": "494:7:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Citizen_$812_storage_$",
+                          "typeString": "mapping(bytes32 => struct ILevelPointsRegistry.Citizen storage ref)"
+                        }
+                      },
+                      "id": 920,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 919,
+                        "name": "subjectId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 889,
+                        "src": "502:9:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "494:18:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Citizen_$812_storage",
+                        "typeString": "struct ILevelPointsRegistry.Citizen storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 921,
+                      "name": "citizen",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 901,
+                      "src": "515:7:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Citizen_$812_storage_ptr",
+                        "typeString": "struct ILevelPointsRegistry.Citizen storage pointer"
+                      }
+                    },
+                    "src": "494:28:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Citizen_$812_storage",
+                      "typeString": "struct ILevelPointsRegistry.Citizen storage ref"
+                    }
+                  },
+                  "id": 923,
+                  "nodeType": "ExpressionStatement",
+                  "src": "494:28:9"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 925,
+                        "name": "subjectId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 889,
+                        "src": "544:9:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 926,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 1029,
+                          "src": "555:3:9",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 927,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "555:10:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 928,
+                        "name": "amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 891,
+                        "src": "567:6:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 929,
+                        "name": "level",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 893,
+                        "src": "575:5:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_Level_$807",
+                          "typeString": "enum ILevelPointsRegistry.Level"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_Level_$807",
+                          "typeString": "enum ILevelPointsRegistry.Level"
+                        }
+                      ],
+                      "id": 924,
+                      "name": "PointsSet",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 847,
+                      "src": "534:9:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$_t_address_$_t_uint256_$_t_enum$_Level_$807_$returns$__$",
+                        "typeString": "function (bytes32,address,uint256,enum ILevelPointsRegistry.Level)"
+                      }
+                    },
+                    "id": 930,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "534:47:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 931,
+                  "nodeType": "EmitStatement",
+                  "src": "529:52:9"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "hexValue": "74727565",
+                    "id": 932,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "bool",
+                    "lValueRequested": false,
+                    "nodeType": "Literal",
+                    "src": "594:4:9",
+                    "subdenomination": null,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "value": "true"
+                  },
+                  "functionReturnParameters": 899,
+                  "id": 933,
+                  "nodeType": "Return",
+                  "src": "587:11:9"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 935,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 896,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 895,
+                  "name": "onlyWhitelisted",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 270,
+                  "src": "340:15:9",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "340:15:9"
+              }
+            ],
+            "name": "setPoints",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 894,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 889,
+                  "name": "subjectId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 935,
+                  "src": "292:17:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 888,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "292:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 891,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 935,
+                  "src": "311:14:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 890,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "311:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 893,
+                  "name": "level",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 935,
+                  "src": "327:11:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Level_$807",
+                    "typeString": "enum ILevelPointsRegistry.Level"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 892,
+                    "name": "Level",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 807,
+                    "src": "327:5:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Level_$807",
+                      "typeString": "enum ILevelPointsRegistry.Level"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "291:48:9"
+            },
+            "returnParameters": {
+              "id": 899,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 898,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 935,
+                  "src": "373:4:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 897,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "373:4:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "372:6:9"
+            },
+            "scope": 962,
+            "src": "273:330:9",
+            "stateMutability": "nonpayable",
+            "superFunction": 823,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 947,
+              "nodeType": "Block",
+              "src": "677:43:9",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 942,
+                        "name": "_points",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 887,
+                        "src": "690:7:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Citizen_$812_storage_$",
+                          "typeString": "mapping(bytes32 => struct ILevelPointsRegistry.Citizen storage ref)"
+                        }
+                      },
+                      "id": 944,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 943,
+                        "name": "subjectId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 937,
+                        "src": "698:9:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "690:18:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Citizen_$812_storage",
+                        "typeString": "struct ILevelPointsRegistry.Citizen storage ref"
+                      }
+                    },
+                    "id": 945,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "points",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 809,
+                    "src": "690:25:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 941,
+                  "id": 946,
+                  "nodeType": "Return",
+                  "src": "683:32:9"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 948,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "balanceOf",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 938,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 937,
+                  "name": "subjectId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 948,
+                  "src": "628:17:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 936,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "628:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "627:19:9"
+            },
+            "returnParameters": {
+              "id": 941,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 940,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 948,
+                  "src": "669:7:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 939,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "669:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "668:9:9"
+            },
+            "scope": 962,
+            "src": "609:111:9",
+            "stateMutability": "view",
+            "superFunction": 830,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 960,
+              "nodeType": "Block",
+              "src": "790:46:9",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 955,
+                        "name": "_points",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 887,
+                        "src": "803:7:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_struct$_Citizen_$812_storage_$",
+                          "typeString": "mapping(bytes32 => struct ILevelPointsRegistry.Citizen storage ref)"
+                        }
+                      },
+                      "id": 957,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 956,
+                        "name": "subjectId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 950,
+                        "src": "811:9:9",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "803:18:9",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Citizen_$812_storage",
+                        "typeString": "struct ILevelPointsRegistry.Citizen storage ref"
+                      }
+                    },
+                    "id": 958,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "level",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 811,
+                    "src": "803:24:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Level_$807",
+                      "typeString": "enum ILevelPointsRegistry.Level"
+                    }
+                  },
+                  "functionReturnParameters": 954,
+                  "id": 959,
+                  "nodeType": "Return",
+                  "src": "796:31:9"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 961,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "levelOf",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 951,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 950,
+                  "name": "subjectId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 961,
+                  "src": "743:17:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 949,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "743:7:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "742:19:9"
+            },
+            "returnParameters": {
+              "id": 954,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 953,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 961,
+                  "src": "784:5:9",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Level_$807",
+                    "typeString": "enum ILevelPointsRegistry.Level"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 952,
+                    "name": "Level",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 807,
+                    "src": "784:5:9",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Level_$807",
+                      "typeString": "enum ILevelPointsRegistry.Level"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "783:7:9"
+            },
+            "scope": 962,
+            "src": "726:110:9",
+            "stateMutability": "view",
+            "superFunction": 837,
+            "visibility": "external"
+          }
+        ],
+        "scope": 963,
+        "src": "157:684:9"
+      }
+    ],
+    "src": "0:842:9"
+  },
+  "bytecode": "0x6080604052610e45806100136000396000f3fe608060405234801561001057600080fd5b50600436106100a95760003560e01c80634c5a628c116100715780634c5a628c1461023f5780636c7f1542146102495780637362d9c81461028b578063bb5f747b146102cf578063c4d66de81461032b578063d6cd94731461036f576100a9565b806310154bad146100ae57806310800d20146100f2578063291d95491461014257806334162bb0146101865780633af32abf146101e3575b600080fd5b6100f0600480360360208110156100c457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610379565b005b61011e6004803603602081101561010857600080fd5b81019080803590602001909291905050506103ea565b6040518082600581111561012e57fe5b60ff16815260200191505060405180910390f35b6101846004803603602081101561015857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610417565b005b6101c96004803603606081101561019c57600080fd5b810190808035906020019092919080359060200190929190803560ff169060200190929190505050610488565b604051808215151515815260200191505060405180910390f35b610225600480360360208110156101f957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610619565b604051808215151515815260200191505060405180910390f35b610247610636565b005b6102756004803603602081101561025f57600080fd5b8101908080359060200190929190505050610648565b6040518082815260200191505060405180910390f35b6102cd600480360360208110156102a157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610668565b005b610311600480360360208110156102e557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106d9565b604051808215151515815260200191505060405180910390f35b61036d6004803603602081101561034157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106f6565b005b6103776107ff565b005b610389610384610811565b6106d9565b6103de576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526040815260200180610d976040913960400191505060405180910390fd5b6103e781610819565b50565b60006099600083815260200190815260200160002060010160009054906101000a900460ff169050919050565b610427610422610811565b6106d9565b61047c576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526040815260200180610d976040913960400191505060405180910390fd5b61048581610873565b50565b600061049a610495610811565b610619565b6104ef576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252603a815260200180610dd7603a913960400191505060405180910390fd5b6000609960008681526020019081526020016000209050838160000181905550828160010160006101000a81548160ff0219169083600581111561052f57fe5b02179055508060996000878152602001908152602001600020600082015481600001556001820160009054906101000a900460ff168160010160006101000a81548160ff0219169083600581111561058357fe5b0217905550905050847f4b585282759bea904679f9f60bc8c8c26e8588e489c58ee7f8c02e72421f969d338686604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018381526020018260058111156105f857fe5b60ff168152602001935050505060405180910390a260019150509392505050565b600061062f8260666108cd90919063ffffffff16565b9050919050565b610646610641610811565b6109ab565b565b600060996000838152602001908152602001600020600001549050919050565b610678610673610811565b6106d9565b6106cd576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526040815260200180610d976040913960400191505060405180910390fd5b6106d681610a05565b50565b60006106ef8260336108cd90919063ffffffff16565b9050919050565b600060019054906101000a900460ff16806107155750610714610a5f565b5b8061072c57506000809054906101000a900460ff16155b610781576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602e815260200180610d69602e913960400191505060405180910390fd5b60008060019054906101000a900460ff1615905080156107d1576001600060016101000a81548160ff02191690831515021790555060016000806101000a81548160ff0219169083151502179055505b6107da82610a76565b80156107fb5760008060016101000a81548160ff0219169083151502179055505b5050565b61080f61080a610811565b610873565b565b600033905090565b61082d816066610b8d90919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fee1504a83b6d4a361f4c1dc78ab59bfa30d6a3b6612c403e86bb01ef2984295f60405160405180910390a250565b610887816066610c6890919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f270d9b30cf5b0793bbfd54c9d5b94aeb49462b8148399000265144a8722da6b660405160405180910390a250565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415610954576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526022815260200180610d476022913960400191505060405180910390fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b6109bf816033610c6890919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f0a8eb35e5ca14b3d6f28e4abf2f128dbab231a58b56e89beb5d636115001e16560405160405180910390a250565b610a19816033610b8d90919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f22380c05984257a1cb900161c713dd71d39e74820f1aea43bd3f1bdd2096129960405160405180910390a250565b6000803090506000813b9050600081149250505090565b600060019054906101000a900460ff1680610a955750610a94610a5f565b5b80610aac57506000809054906101000a900460ff16155b610b01576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602e815260200180610d69602e913960400191505060405180910390fd5b60008060019054906101000a900460ff161590508015610b51576001600060016101000a81548160ff02191690831515021790555060016000806101000a81548160ff0219169083151502179055505b610b5a826106d9565b610b6857610b6782610a05565b5b8015610b895760008060016101000a81548160ff0219169083151502179055505b5050565b610b9782826108cd565b15610c0a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601f8152602001807f526f6c65733a206163636f756e7420616c72656164792068617320726f6c650081525060200191505060405180910390fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b610c7282826108cd565b610cc7576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526021815260200180610d266021913960400191505060405180910390fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908315150217905550505056fe526f6c65733a206163636f756e7420646f6573206e6f74206861766520726f6c65526f6c65733a206163636f756e7420697320746865207a65726f2061646472657373436f6e747261637420696e7374616e63652068617320616c7265616479206265656e20696e697469616c697a656457686974656c69737441646d696e526f6c653a2063616c6c657220646f6573206e6f742068617665207468652057686974656c69737441646d696e20726f6c6557686974656c6973746564526f6c653a2063616c6c657220646f6573206e6f742068617665207468652057686974656c697374656420726f6c65a265627a7a7231582093bf92e36f3487ad2466ed4c86f9f482d34499a756cdf2930c48bec878e9253a64736f6c63430005110032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100a95760003560e01c80634c5a628c116100715780634c5a628c1461023f5780636c7f1542146102495780637362d9c81461028b578063bb5f747b146102cf578063c4d66de81461032b578063d6cd94731461036f576100a9565b806310154bad146100ae57806310800d20146100f2578063291d95491461014257806334162bb0146101865780633af32abf146101e3575b600080fd5b6100f0600480360360208110156100c457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610379565b005b61011e6004803603602081101561010857600080fd5b81019080803590602001909291905050506103ea565b6040518082600581111561012e57fe5b60ff16815260200191505060405180910390f35b6101846004803603602081101561015857600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610417565b005b6101c96004803603606081101561019c57600080fd5b810190808035906020019092919080359060200190929190803560ff169060200190929190505050610488565b604051808215151515815260200191505060405180910390f35b610225600480360360208110156101f957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610619565b604051808215151515815260200191505060405180910390f35b610247610636565b005b6102756004803603602081101561025f57600080fd5b8101908080359060200190929190505050610648565b6040518082815260200191505060405180910390f35b6102cd600480360360208110156102a157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610668565b005b610311600480360360208110156102e557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106d9565b604051808215151515815260200191505060405180910390f35b61036d6004803603602081101561034157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506106f6565b005b6103776107ff565b005b610389610384610811565b6106d9565b6103de576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526040815260200180610d976040913960400191505060405180910390fd5b6103e781610819565b50565b60006099600083815260200190815260200160002060010160009054906101000a900460ff169050919050565b610427610422610811565b6106d9565b61047c576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526040815260200180610d976040913960400191505060405180910390fd5b61048581610873565b50565b600061049a610495610811565b610619565b6104ef576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252603a815260200180610dd7603a913960400191505060405180910390fd5b6000609960008681526020019081526020016000209050838160000181905550828160010160006101000a81548160ff0219169083600581111561052f57fe5b02179055508060996000878152602001908152602001600020600082015481600001556001820160009054906101000a900460ff168160010160006101000a81548160ff0219169083600581111561058357fe5b0217905550905050847f4b585282759bea904679f9f60bc8c8c26e8588e489c58ee7f8c02e72421f969d338686604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018381526020018260058111156105f857fe5b60ff168152602001935050505060405180910390a260019150509392505050565b600061062f8260666108cd90919063ffffffff16565b9050919050565b610646610641610811565b6109ab565b565b600060996000838152602001908152602001600020600001549050919050565b610678610673610811565b6106d9565b6106cd576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526040815260200180610d976040913960400191505060405180910390fd5b6106d681610a05565b50565b60006106ef8260336108cd90919063ffffffff16565b9050919050565b600060019054906101000a900460ff16806107155750610714610a5f565b5b8061072c57506000809054906101000a900460ff16155b610781576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602e815260200180610d69602e913960400191505060405180910390fd5b60008060019054906101000a900460ff1615905080156107d1576001600060016101000a81548160ff02191690831515021790555060016000806101000a81548160ff0219169083151502179055505b6107da82610a76565b80156107fb5760008060016101000a81548160ff0219169083151502179055505b5050565b61080f61080a610811565b610873565b565b600033905090565b61082d816066610b8d90919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fee1504a83b6d4a361f4c1dc78ab59bfa30d6a3b6612c403e86bb01ef2984295f60405160405180910390a250565b610887816066610c6890919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f270d9b30cf5b0793bbfd54c9d5b94aeb49462b8148399000265144a8722da6b660405160405180910390a250565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415610954576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526022815260200180610d476022913960400191505060405180910390fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b6109bf816033610c6890919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f0a8eb35e5ca14b3d6f28e4abf2f128dbab231a58b56e89beb5d636115001e16560405160405180910390a250565b610a19816033610b8d90919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f22380c05984257a1cb900161c713dd71d39e74820f1aea43bd3f1bdd2096129960405160405180910390a250565b6000803090506000813b9050600081149250505090565b600060019054906101000a900460ff1680610a955750610a94610a5f565b5b80610aac57506000809054906101000a900460ff16155b610b01576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602e815260200180610d69602e913960400191505060405180910390fd5b60008060019054906101000a900460ff161590508015610b51576001600060016101000a81548160ff02191690831515021790555060016000806101000a81548160ff0219169083151502179055505b610b5a826106d9565b610b6857610b6782610a05565b5b8015610b895760008060016101000a81548160ff0219169083151502179055505b5050565b610b9782826108cd565b15610c0a576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601f8152602001807f526f6c65733a206163636f756e7420616c72656164792068617320726f6c650081525060200191505060405180910390fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b610c7282826108cd565b610cc7576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401808060200182810382526021815260200180610d266021913960400191505060405180910390fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908315150217905550505056fe526f6c65733a206163636f756e7420646f6573206e6f74206861766520726f6c65526f6c65733a206163636f756e7420697320746865207a65726f2061646472657373436f6e747261637420696e7374616e63652068617320616c7265616479206265656e20696e697469616c697a656457686974656c69737441646d696e526f6c653a2063616c6c657220646f6573206e6f742068617665207468652057686974656c69737441646d696e20726f6c6557686974656c6973746564526f6c653a2063616c6c657220646f6573206e6f742068617665207468652057686974656c697374656420726f6c65a265627a7a7231582093bf92e36f3487ad2466ed4c86f9f482d34499a756cdf2930c48bec878e9253a64736f6c63430005110032",
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang",
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "evmVersion": "petersburg"
+  },
+  "networks": {
+    "648530": {
+      "links": {},
+      "events": {},
+      "address": "0x60ea04D698EB386534826410D7dF0969f567aA01",
+      "updated_at": 1590105026125
+    }
+  }
+}

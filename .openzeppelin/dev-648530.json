@@ -399,6 +399,162 @@
         ],
         "storageDiff": []
       }
+    },
+    "LevelPointsRegistry": {
+      "address": "0xdE399a3DB4c1039916E67C254154b7B4860f2C84",
+      "constructorCode": "6080604052610e45806100136000396000f3fe",
+      "bodyBytecodeHash": "cd7c670ac54f8ebdd40f20dd92add64453140564b17a33f903a471ba47c3a507",
+      "localBytecodeHash": "7eea47ace874eb0ed1fcc360efa5da6401284ea0e682676b578426cc9de99d10",
+      "deployedBytecodeHash": "7eea47ace874eb0ed1fcc360efa5da6401284ea0e682676b578426cc9de99d10",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_struct<Roles.Role>": {
+          "id": "t_struct<Roles.Role>",
+          "kind": "struct",
+          "label": "Roles.Role",
+          "members": [
+            {
+              "label": "bearer",
+              "astId": 35,
+              "type": "t_mapping<t_bool>",
+              "src": "150:32:1"
+            }
+          ]
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        },
+        "t_struct<ILevelPointsRegistry.Citizen>": {
+          "id": "t_struct<ILevelPointsRegistry.Citizen>",
+          "kind": "struct",
+          "label": "ILevelPointsRegistry.Citizen",
+          "members": [
+            {
+              "label": "points",
+              "astId": 809,
+              "type": "t_uint256",
+              "src": "240:14:7"
+            },
+            {
+              "label": "level",
+              "astId": 811,
+              "type": "t_enum<ILevelPointsRegistry.Level>",
+              "src": "264:11:7"
+            }
+          ]
+        },
+        "t_enum<ILevelPointsRegistry.Level>": {
+          "id": "t_enum<ILevelPointsRegistry.Level>",
+          "kind": "enum",
+          "label": "ILevelPointsRegistry.Level",
+          "members": [
+            "CommittedCitizen",
+            "HeroPromise",
+            "HeroApprentice",
+            "Hero",
+            "HeroMaster",
+            "David19"
+          ]
+        },
+        "t_mapping<t_struct<ILevelPointsRegistry.Citizen>>": {
+          "id": "t_mapping<t_struct<ILevelPointsRegistry.Citizen>>",
+          "valueType": "t_struct<ILevelPointsRegistry.Citizen>",
+          "label": "mapping(key => ILevelPointsRegistry.Citizen)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 371,
+          "type": "t_bool",
+          "src": "757:24:4"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 373,
+          "type": "t_bool",
+          "src": "876:25:4"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 435,
+          "type": "t_array:50<t_uint256>",
+          "src": "1982:29:4"
+        },
+        {
+          "contract": "WhitelistAdminRole",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/access/roles/WhitelistAdminRole.sol",
+          "label": "_whitelistAdmins",
+          "astId": 132,
+          "type": "t_struct<Roles.Role>",
+          "src": "477:35:2"
+        },
+        {
+          "contract": "WhitelistAdminRole",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/access/roles/WhitelistAdminRole.sol",
+          "label": "______gap",
+          "astId": 232,
+          "type": "t_array:50<t_uint256>",
+          "src": "1503:29:2"
+        },
+        {
+          "contract": "WhitelistedRole",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/access/roles/WhitelistedRole.sol",
+          "label": "_whitelisteds",
+          "astId": 258,
+          "type": "t_struct<Roles.Role>",
+          "src": "709:32:3"
+        },
+        {
+          "contract": "WhitelistedRole",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/access/roles/WhitelistedRole.sol",
+          "label": "______gap",
+          "astId": 366,
+          "type": "t_array:50<t_uint256>",
+          "src": "1760:29:3"
+        },
+        {
+          "contract": "LevelPointsRegistry",
+          "path": "contracts/LevelPointsRegistry.sol",
+          "label": "_points",
+          "astId": 887,
+          "type": "t_mapping<t_struct<ILevelPointsRegistry.Citizen>>",
+          "src": "232:36:9"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
     }
   },
   "solidityLibs": {},
@@ -421,13 +577,6 @@
     ],
     "David19/PointsRegistry": [
       {
-        "address": "0x8cED8E12299b4CCB4b007ee9Cc3233CB5755b770",
-        "version": "1.0.0",
-        "implementation": "0x2a4a7f7fA24b370c0d286a81425CCB21D676aB44",
-        "admin": "0x5ABB3005D8EdA6eaeaF14D4Af1c3Bb777bf6Aa55",
-        "kind": "Upgradeable"
-      },
-      {
         "address": "0x0E7837f6Ba2C39FE68C518D5d8f311EAC6e4f4E7",
         "version": "1.0.0",
         "implementation": "0x312a4F8523d79209d73832806d1E111A836cDbf7",
@@ -438,6 +587,22 @@
         "address": "0x109c901F9a29FfA6b34efCdcF3388841D22Ca553",
         "version": "1.0.0",
         "implementation": "0x312a4F8523d79209d73832806d1E111A836cDbf7",
+        "admin": "0x5ABB3005D8EdA6eaeaF14D4Af1c3Bb777bf6Aa55",
+        "kind": "Upgradeable"
+      }
+    ],
+    "David19/LevelPointsRegistry": [
+      {
+        "address": "0x73Cd0FD17390F81701329210b3296E9Da4165Ed3",
+        "version": "1.0.0",
+        "implementation": "0xdE399a3DB4c1039916E67C254154b7B4860f2C84",
+        "admin": "0x5ABB3005D8EdA6eaeaF14D4Af1c3Bb777bf6Aa55",
+        "kind": "Upgradeable"
+      },
+      {
+        "address": "0x60ea04D698EB386534826410D7dF0969f567aA01",
+        "version": "1.0.0",
+        "implementation": "0xdE399a3DB4c1039916E67C254154b7B4860f2C84",
         "admin": "0x5ABB3005D8EdA6eaeaF14D4Af1c3Bb777bf6Aa55",
         "kind": "Upgradeable"
       }

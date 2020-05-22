@@ -1,0 +1,701 @@
+{
+  "fileName": "ILevelPointsRegistry.sol",
+  "contractName": "ILevelPointsRegistry",
+  "source": "pragma solidity ^0.5.0;\n\ninterface ILevelPointsRegistry {\n    \n    enum Level{\n        CommittedCitizen,\n        HeroPromise,\n        HeroApprentice,\n        Hero,\n        HeroMaster,\n        David19\n    }\n    \n    struct Citizen {\n        uint256 points;\n        Level level;\n    }\n\n    function setPoints(bytes32 subjectId, uint256 points, Level level) external returns (bool);\n    \n    function balanceOf(bytes32 subjectId) external view returns (uint256 totalBalance);\n\n    function levelOf(bytes32 subjectId) external view returns (Level level);\n\n    event PointsSet(bytes32 indexed subjectId, address sender, uint256 amount, Level level);\n}",
+  "sourcePath": "contracts/ILevelPointsRegistry.sol",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "subjectId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum ILevelPointsRegistry.Level",
+          "name": "level",
+          "type": "uint8"
+        }
+      ],
+      "name": "PointsSet",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "subjectId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalBalance",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "subjectId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "levelOf",
+      "outputs": [
+        {
+          "internalType": "enum ILevelPointsRegistry.Level",
+          "name": "level",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "subjectId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "points",
+          "type": "uint256"
+        },
+        {
+          "internalType": "enum ILevelPointsRegistry.Level",
+          "name": "level",
+          "type": "uint8"
+        }
+      ],
+      "name": "setPoints",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "ast": {
+    "absolutePath": "contracts/ILevelPointsRegistry.sol",
+    "exportedSymbols": {
+      "ILevelPointsRegistry": [
+        848
+      ]
+    },
+    "id": 849,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 800,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:7"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 848,
+        "linearizedBaseContracts": [
+          848
+        ],
+        "name": "ILevelPointsRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "ILevelPointsRegistry.Level",
+            "id": 807,
+            "members": [
+              {
+                "id": 801,
+                "name": "CommittedCitizen",
+                "nodeType": "EnumValue",
+                "src": "87:16:7"
+              },
+              {
+                "id": 802,
+                "name": "HeroPromise",
+                "nodeType": "EnumValue",
+                "src": "113:11:7"
+              },
+              {
+                "id": 803,
+                "name": "HeroApprentice",
+                "nodeType": "EnumValue",
+                "src": "134:14:7"
+              },
+              {
+                "id": 804,
+                "name": "Hero",
+                "nodeType": "EnumValue",
+                "src": "158:4:7"
+              },
+              {
+                "id": 805,
+                "name": "HeroMaster",
+                "nodeType": "EnumValue",
+                "src": "172:10:7"
+              },
+              {
+                "id": 806,
+                "name": "David19",
+                "nodeType": "EnumValue",
+                "src": "192:7:7"
+              }
+            ],
+            "name": "Level",
+            "nodeType": "EnumDefinition",
+            "src": "67:138:7"
+          },
+          {
+            "canonicalName": "ILevelPointsRegistry.Citizen",
+            "id": 812,
+            "members": [
+              {
+                "constant": false,
+                "id": 809,
+                "name": "points",
+                "nodeType": "VariableDeclaration",
+                "scope": 812,
+                "src": "240:14:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 808,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "240:7:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 811,
+                "name": "level",
+                "nodeType": "VariableDeclaration",
+                "scope": 812,
+                "src": "264:11:7",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Level_$807",
+                  "typeString": "enum ILevelPointsRegistry.Level"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 810,
+                  "name": "Level",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 807,
+                  "src": "264:5:7",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Level_$807",
+                    "typeString": "enum ILevelPointsRegistry.Level"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Citizen",
+            "nodeType": "StructDefinition",
+            "scope": 848,
+            "src": "215:67:7",
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 823,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setPoints",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 819,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 814,
+                  "name": "subjectId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 823,
+                  "src": "307:17:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 813,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "307:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 816,
+                  "name": "points",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 823,
+                  "src": "326:14:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 815,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "326:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 818,
+                  "name": "level",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 823,
+                  "src": "342:11:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Level_$807",
+                    "typeString": "enum ILevelPointsRegistry.Level"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 817,
+                    "name": "Level",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 807,
+                    "src": "342:5:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Level_$807",
+                      "typeString": "enum ILevelPointsRegistry.Level"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "306:48:7"
+            },
+            "returnParameters": {
+              "id": 822,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 821,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 823,
+                  "src": "373:4:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 820,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "373:4:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "372:6:7"
+            },
+            "scope": 848,
+            "src": "288:91:7",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 830,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "balanceOf",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 826,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 825,
+                  "name": "subjectId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 830,
+                  "src": "408:17:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 824,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "408:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "407:19:7"
+            },
+            "returnParameters": {
+              "id": 829,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 828,
+                  "name": "totalBalance",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 830,
+                  "src": "450:20:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 827,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "450:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "449:22:7"
+            },
+            "scope": 848,
+            "src": "389:83:7",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 837,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "levelOf",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 833,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 832,
+                  "name": "subjectId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 837,
+                  "src": "495:17:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 831,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "495:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "494:19:7"
+            },
+            "returnParameters": {
+              "id": 836,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 835,
+                  "name": "level",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 837,
+                  "src": "537:11:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Level_$807",
+                    "typeString": "enum ILevelPointsRegistry.Level"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 834,
+                    "name": "Level",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 807,
+                    "src": "537:5:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Level_$807",
+                      "typeString": "enum ILevelPointsRegistry.Level"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "536:13:7"
+            },
+            "scope": 848,
+            "src": "478:72:7",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 847,
+            "name": "PointsSet",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 846,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 839,
+                  "indexed": true,
+                  "name": "subjectId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 847,
+                  "src": "572:25:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 838,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "572:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 841,
+                  "indexed": false,
+                  "name": "sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 847,
+                  "src": "599:14:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 840,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "599:7:7",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 843,
+                  "indexed": false,
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 847,
+                  "src": "615:14:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 842,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "615:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 845,
+                  "indexed": false,
+                  "name": "level",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 847,
+                  "src": "631:11:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Level_$807",
+                    "typeString": "enum ILevelPointsRegistry.Level"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 844,
+                    "name": "Level",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 807,
+                    "src": "631:5:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Level_$807",
+                      "typeString": "enum ILevelPointsRegistry.Level"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "571:72:7"
+            },
+            "src": "556:88:7"
+          }
+        ],
+        "scope": 849,
+        "src": "25:621:7"
+      }
+    ],
+    "src": "0:646:7"
+  },
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang",
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "evmVersion": "petersburg"
+  }
+}
