@@ -38,7 +38,7 @@
         }
       },
       "reason":{
-        "type":"Purchase", 
+        "type":"purchase", 
       },
       "startDate": "2020-03-01T19:23:24Z",
       "endDate": "2020-03-01T22:23:24Z"
