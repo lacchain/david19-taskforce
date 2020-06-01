@@ -160,7 +160,7 @@ For example, the parameters to register a covid credential could be:
 * age: 35
 * geoHash: 0x366d63357162 (Hexadecimal value of 6mc5qb)
 * credentialType: CovidCode.Confinement (value:0)
-* reason: InterruptionReason.None (value:0)
+* reason: InterruptionReason.Food (value:0)
 * symptoms: 0xF0 "Symptoms", "Fever", "Cough", "Breathing issues". (value of 11110000)
 
 The requirements for the credential to be registered are that: 
