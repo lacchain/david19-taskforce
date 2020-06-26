@@ -1,2 +1,0 @@
-DAVID19 Architecture
-
