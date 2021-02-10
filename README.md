@@ -124,7 +124,7 @@ As that is the hash of personal information that could eventually become PII, in
 
 GeoHash encoding with precisiong size.
 
-Copyright 2020 LACChain
+## Copyright 2021 LACChain
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
